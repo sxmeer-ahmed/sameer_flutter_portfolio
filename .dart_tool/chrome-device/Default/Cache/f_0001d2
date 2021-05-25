@@ -1,0 +1,311 @@
+define(['dart_sdk', 'packages/flutter_web_plugins/src/navigation/utils.dart'], (function load__packages__flutter_web_plugins__src__navigation__url_strategy_dart(dart_sdk, packages__flutter_web_plugins__src__navigation__utils$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const _internal = dart_sdk._internal;
+  const html = dart_sdk.html;
+  const js = dart_sdk.js;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const utils = packages__flutter_web_plugins__src__navigation__utils$46dart.src__navigation__utils;
+  var url_strategy = Object.create(dart.library);
+  var js_url_strategy = Object.create(dart.library);
+  var $isEmpty = dartx.isEmpty;
+  var $startsWith = dartx.startsWith;
+  var $substring = dartx.substring;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $location = dartx.location;
+  var $addEventListener = dartx.addEventListener;
+  var $removeEventListener = dartx.removeEventListener;
+  var $state = dartx.state;
+  var $pushState = dartx.pushState;
+  var $replaceState = dartx.replaceState;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    CompleterOfvoid: () => (T.CompleterOfvoid = dart.constFn(async.Completer$(dart.void)))(),
+    VoidToFn: () => (T.VoidToFn = dart.constFn(dart.fnType(T.VoidTovoid(), [])))(),
+    FnTodynamic: () => (T.FnTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T.VoidTovoid()])))(),
+    EventToNull: () => (T.EventToNull = dart.constFn(dart.fnType(core.Null, [html.Event])))(),
+    VoidToString: () => (T.VoidToString = dart.constFn(dart.fnType(core.String, [])))(),
+    ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
+    VoidToObjectN: () => (T.VoidToObjectN = dart.constFn(dart.fnType(T.ObjectN(), [])))(),
+    EventTodynamic: () => (T.EventTodynamic = dart.constFn(dart.fnType(dart.dynamic, [html.Event])))(),
+    FnToFn: () => (T.FnToFn = dart.constFn(dart.fnType(T.VoidTovoid(), [T.EventTodynamic()])))(),
+    StringToString: () => (T.StringToString = dart.constFn(dart.fnType(core.String, [core.String])))(),
+    ObjectAndStringAndStringTovoid: () => (T.ObjectAndStringAndStringTovoid = dart.constFn(dart.fnType(dart.void, [core.Object, core.String, core.String])))(),
+    FutureOfvoid: () => (T.FutureOfvoid = dart.constFn(async.Future$(dart.void)))(),
+    intToFutureOfvoid: () => (T.intToFutureOfvoid = dart.constFn(dart.fnType(T.FutureOfvoid(), [core.int])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: url_strategy.BrowserPlatformLocation.prototype
+      });
+    }
+  }, false);
+  var C = [void 0];
+  var I = [
+    "package:flutter_web_plugins/src/navigation/url_strategy.dart",
+    "file:///C:/src/flutter/flutter/packages/flutter_web_plugins/lib/src/navigation/url_strategy.dart",
+    "file:///C:/src/flutter/flutter/packages/flutter_web_plugins/lib/src/navigation/js_url_strategy.dart"
+  ];
+  url_strategy.UrlStrategy = class UrlStrategy extends core.Object {};
+  (url_strategy.UrlStrategy.new = function() {
+    ;
+  }).prototype = url_strategy.UrlStrategy.prototype;
+  dart.addTypeTests(url_strategy.UrlStrategy);
+  dart.addTypeCaches(url_strategy.UrlStrategy);
+  dart.setLibraryUri(url_strategy.UrlStrategy, I[0]);
+  var _platformLocation$ = dart.privateName(url_strategy, "HashUrlStrategy._platformLocation");
+  var _platformLocation = dart.privateName(url_strategy, "_platformLocation");
+  var _waitForPopState = dart.privateName(url_strategy, "_waitForPopState");
+  url_strategy.HashUrlStrategy = class HashUrlStrategy extends url_strategy.UrlStrategy {
+    get [_platformLocation]() {
+      return this[_platformLocation$];
+    }
+    set [_platformLocation](value) {
+      super[_platformLocation] = value;
+    }
+    addPopStateListener(fn) {
+      if (fn == null) dart.nullFailed(I[1], 97, 58, "fn");
+      this[_platformLocation].addPopStateListener(fn);
+      return dart.fn(() => this[_platformLocation].removePopStateListener(fn), T.VoidTovoid());
+    }
+    getPath() {
+      let path = this[_platformLocation].hash;
+      if (!(path[$isEmpty] || path[$startsWith]("#"))) dart.assertFailed(null, I[1], 107, 12, "path.isEmpty || path.startsWith('#')");
+      if (path[$isEmpty] || path === "#") {
+        return "/";
+      }
+      return path[$substring](1);
+    }
+    getState() {
+      return this[_platformLocation].state;
+    }
+    prepareExternalUrl(internalUrl) {
+      if (internalUrl == null) dart.nullFailed(I[1], 121, 36, "internalUrl");
+      return internalUrl[$isEmpty] ? dart.str(this[_platformLocation].pathname) + dart.str(this[_platformLocation].search) : "#" + dart.str(internalUrl);
+    }
+    pushState(state, title, url) {
+      if (state == null) dart.nullFailed(I[1], 132, 25, "state");
+      if (title == null) dart.nullFailed(I[1], 132, 39, "title");
+      if (url == null) dart.nullFailed(I[1], 132, 53, "url");
+      this[_platformLocation].pushState(state, title, this.prepareExternalUrl(url));
+    }
+    replaceState(state, title, url) {
+      if (state == null) dart.nullFailed(I[1], 137, 28, "state");
+      if (title == null) dart.nullFailed(I[1], 137, 42, "title");
+      if (url == null) dart.nullFailed(I[1], 137, 56, "url");
+      this[_platformLocation].replaceState(state, title, this.prepareExternalUrl(url));
+    }
+    go(count) {
+      if (count == null) dart.nullFailed(I[1], 142, 23, "count");
+      this[_platformLocation].go(count);
+      return this[_waitForPopState]();
+    }
+    [_waitForPopState]() {
+      let completer = T.CompleterOfvoid().new();
+      let unsubscribe = null;
+      let unsubscribe$35isSet = false;
+      function unsubscribe$35get() {
+        return unsubscribe$35isSet ? unsubscribe : dart.throw(new _internal.LateError.localNI("unsubscribe"));
+      }
+      dart.fn(unsubscribe$35get, T.VoidToFn());
+      function unsubscribe$35set(t3) {
+        if (t3 == null) dart.nullFailed(I[1], 153, 26, "null");
+        unsubscribe$35isSet = true;
+        return unsubscribe = t3;
+      }
+      dart.fn(unsubscribe$35set, T.FnTodynamic());
+      unsubscribe$35set(this.addPopStateListener(dart.fn(_ => {
+        if (_ == null) dart.nullFailed(I[1], 154, 40, "_");
+        unsubscribe$35get()();
+        completer.complete();
+      }, T.EventToNull())));
+      return completer.future;
+    }
+  };
+  (url_strategy.HashUrlStrategy.new = function(_platformLocation = C[0] || CT.C0) {
+    if (_platformLocation == null) dart.nullFailed(I[1], 92, 13, "_platformLocation");
+    this[_platformLocation$] = _platformLocation;
+    url_strategy.HashUrlStrategy.__proto__.new.call(this);
+    ;
+  }).prototype = url_strategy.HashUrlStrategy.prototype;
+  dart.addTypeTests(url_strategy.HashUrlStrategy);
+  dart.addTypeCaches(url_strategy.HashUrlStrategy);
+  dart.setMethodSignature(url_strategy.HashUrlStrategy, () => ({
+    __proto__: dart.getMethods(url_strategy.HashUrlStrategy.__proto__),
+    addPopStateListener: dart.fnType(dart.fnType(dart.void, []), [dart.fnType(dart.dynamic, [html.Event])]),
+    getPath: dart.fnType(core.String, []),
+    getState: dart.fnType(dart.nullable(core.Object), []),
+    prepareExternalUrl: dart.fnType(core.String, [core.String]),
+    pushState: dart.fnType(dart.void, [core.Object, core.String, core.String]),
+    replaceState: dart.fnType(dart.void, [core.Object, core.String, core.String]),
+    go: dart.fnType(async.Future$(dart.void), [core.int]),
+    [_waitForPopState]: dart.fnType(async.Future$(dart.void), [])
+  }));
+  dart.setLibraryUri(url_strategy.HashUrlStrategy, I[0]);
+  dart.setFieldSignature(url_strategy.HashUrlStrategy, () => ({
+    __proto__: dart.getFields(url_strategy.HashUrlStrategy.__proto__),
+    [_platformLocation]: dart.finalFieldType(url_strategy.PlatformLocation)
+  }));
+  var _basePath = dart.privateName(url_strategy, "_basePath");
+  url_strategy.PathUrlStrategy = class PathUrlStrategy extends url_strategy.HashUrlStrategy {
+    getPath() {
+      let path = dart.notNull(this[_platformLocation].pathname) + dart.notNull(this[_platformLocation].search);
+      if (this[_basePath][$isNotEmpty] && path[$startsWith](this[_basePath])) {
+        return utils.ensureLeadingSlash(path[$substring](this[_basePath].length));
+      }
+      return utils.ensureLeadingSlash(path);
+    }
+    prepareExternalUrl(internalUrl) {
+      if (internalUrl == null) dart.nullFailed(I[1], 196, 36, "internalUrl");
+      if (internalUrl[$isNotEmpty] && !internalUrl[$startsWith]("/")) {
+        internalUrl = "/" + dart.str(internalUrl);
+      }
+      return dart.str(this[_basePath]) + dart.str(internalUrl);
+    }
+  };
+  (url_strategy.PathUrlStrategy.new = function(_platformLocation = C[0] || CT.C0) {
+    if (_platformLocation == null) dart.nullFailed(I[1], 178, 22, "_platformLocation");
+    this[_basePath] = utils.stripTrailingSlash(utils.extractPathname(utils.checkBaseHref(_platformLocation.getBaseHref())));
+    url_strategy.PathUrlStrategy.__proto__.new.call(this, _platformLocation);
+    ;
+  }).prototype = url_strategy.PathUrlStrategy.prototype;
+  dart.addTypeTests(url_strategy.PathUrlStrategy);
+  dart.addTypeCaches(url_strategy.PathUrlStrategy);
+  dart.setLibraryUri(url_strategy.PathUrlStrategy, I[0]);
+  dart.setFieldSignature(url_strategy.PathUrlStrategy, () => ({
+    __proto__: dart.getFields(url_strategy.PathUrlStrategy.__proto__),
+    [_basePath]: dart.finalFieldType(core.String)
+  }));
+  url_strategy.PlatformLocation = class PlatformLocation extends core.Object {};
+  (url_strategy.PlatformLocation.new = function() {
+    ;
+  }).prototype = url_strategy.PlatformLocation.prototype;
+  dart.addTypeTests(url_strategy.PlatformLocation);
+  dart.addTypeCaches(url_strategy.PlatformLocation);
+  dart.setLibraryUri(url_strategy.PlatformLocation, I[0]);
+  var _location = dart.privateName(url_strategy, "_location");
+  var _history = dart.privateName(url_strategy, "_history");
+  url_strategy.BrowserPlatformLocation = class BrowserPlatformLocation extends url_strategy.PlatformLocation {
+    get [_location]() {
+      return html.window[$location];
+    }
+    get [_history]() {
+      return html.window.history;
+    }
+    addPopStateListener(fn) {
+      if (fn == null) dart.nullFailed(I[1], 291, 47, "fn");
+      html.window[$addEventListener]("popstate", fn);
+    }
+    removePopStateListener(fn) {
+      if (fn == null) dart.nullFailed(I[1], 296, 50, "fn");
+      html.window[$removeEventListener]("popstate", fn);
+    }
+    get pathname() {
+      let t5;
+      t5 = this[_location].pathname;
+      return t5 == null ? "" : t5;
+    }
+    get search() {
+      let t5;
+      t5 = this[_location].search;
+      return t5 == null ? "" : t5;
+    }
+    get hash() {
+      return this[_location].hash;
+    }
+    get state() {
+      return this[_history][$state];
+    }
+    pushState(state, title, url) {
+      if (state == null) dart.nullFailed(I[1], 313, 25, "state");
+      if (title == null) dart.nullFailed(I[1], 313, 39, "title");
+      if (url == null) dart.nullFailed(I[1], 313, 53, "url");
+      this[_history][$pushState](state, title, url);
+    }
+    replaceState(state, title, url) {
+      if (state == null) dart.nullFailed(I[1], 318, 28, "state");
+      if (title == null) dart.nullFailed(I[1], 318, 42, "title");
+      if (url == null) dart.nullFailed(I[1], 318, 56, "url");
+      this[_history][$replaceState](state, title, url);
+    }
+    go(count) {
+      if (count == null) dart.nullFailed(I[1], 323, 15, "count");
+      this[_history].go(count);
+    }
+    getBaseHref() {
+      return utils.getBaseElementHrefFromDom();
+    }
+  };
+  (url_strategy.BrowserPlatformLocation.new = function() {
+    url_strategy.BrowserPlatformLocation.__proto__.new.call(this);
+    ;
+  }).prototype = url_strategy.BrowserPlatformLocation.prototype;
+  dart.addTypeTests(url_strategy.BrowserPlatformLocation);
+  dart.addTypeCaches(url_strategy.BrowserPlatformLocation);
+  dart.setMethodSignature(url_strategy.BrowserPlatformLocation, () => ({
+    __proto__: dart.getMethods(url_strategy.BrowserPlatformLocation.__proto__),
+    addPopStateListener: dart.fnType(dart.void, [dart.fnType(dart.dynamic, [html.Event])]),
+    removePopStateListener: dart.fnType(dart.void, [dart.fnType(dart.dynamic, [html.Event])]),
+    pushState: dart.fnType(dart.void, [core.Object, core.String, core.String]),
+    replaceState: dart.fnType(dart.void, [core.Object, core.String, core.String]),
+    go: dart.fnType(dart.void, [core.int]),
+    getBaseHref: dart.fnType(dart.nullable(core.String), [])
+  }));
+  dart.setGetterSignature(url_strategy.BrowserPlatformLocation, () => ({
+    __proto__: dart.getGetters(url_strategy.BrowserPlatformLocation.__proto__),
+    [_location]: html.Location,
+    [_history]: html.History,
+    pathname: core.String,
+    search: core.String,
+    hash: core.String,
+    state: dart.nullable(core.Object)
+  }));
+  dart.setLibraryUri(url_strategy.BrowserPlatformLocation, I[0]);
+  dart.defineLazy(url_strategy.BrowserPlatformLocation, {
+    /*url_strategy.BrowserPlatformLocation._defaultPathname*/get _defaultPathname() {
+      return "";
+    },
+    /*url_strategy.BrowserPlatformLocation._defaultSearch*/get _defaultSearch() {
+      return "";
+    }
+  }, false);
+  url_strategy.setUrlStrategy = function setUrlStrategy(strategy) {
+    let jsUrlStrategy = null;
+    if (strategy != null) {
+      jsUrlStrategy = js_url_strategy.convertToJsUrlStrategy(strategy);
+    }
+    dart.global._flutter_web_set_location_strategy(jsUrlStrategy);
+  };
+  js_url_strategy.convertToJsUrlStrategy = function convertToJsUrlStrategy(strategy) {
+    if (strategy == null) dart.nullFailed(I[2], 43, 50, "strategy");
+    return {getPath: js.allowInterop(T.VoidToString(), dart.bind(strategy, 'getPath')), getState: js.allowInterop(T.VoidToObjectN(), dart.bind(strategy, 'getState')), addPopStateListener: js.allowInterop(T.FnToFn(), dart.bind(strategy, 'addPopStateListener')), prepareExternalUrl: js.allowInterop(T.StringToString(), dart.bind(strategy, 'prepareExternalUrl')), pushState: js.allowInterop(T.ObjectAndStringAndStringTovoid(), dart.bind(strategy, 'pushState')), replaceState: js.allowInterop(T.ObjectAndStringAndStringTovoid(), dart.bind(strategy, 'replaceState')), go: js.allowInterop(T.intToFutureOfvoid(), dart.bind(strategy, 'go'))};
+  };
+  dart.trackLibraries("packages/flutter_web_plugins/src/navigation/url_strategy.dart", {
+    "package:flutter_web_plugins/src/navigation/url_strategy.dart": url_strategy,
+    "package:flutter_web_plugins/src/navigation/js_url_strategy.dart": js_url_strategy
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["url_strategy.dart","js_url_strategy.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../Z:/packages/flutter_web_plugins/src/navigation/url_strategy.dart.lib.js"}');
+  // Exports:
+  return {
+    src__navigation__url_strategy: url_strategy,
+    src__navigation__js_url_strategy: js_url_strategy
+  };
+}));
+
+//# sourceMappingURL=url_strategy.dart.lib.js.map

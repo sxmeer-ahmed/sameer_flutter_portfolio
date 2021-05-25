@@ -1,0 +1,685 @@
+define(['dart_sdk', 'packages/vector_math/vector_math.dart', 'packages/flutter_wgl/src/core/lib.dart'], (function load__packages__flutter_wgl__src__webhelper__lib_dart(dart_sdk, packages__vector_math__vector_math$46dart, packages__flutter_wgl__src__core__lib$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const collection = dart_sdk.collection;
+  const html = dart_sdk.html;
+  const _js_helper = dart_sdk._js_helper;
+  const async = dart_sdk.async;
+  const convert = dart_sdk.convert;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const vector_math = packages__vector_math__vector_math$46dart.vector_math;
+  const lib = packages__flutter_wgl__src__core__lib$46dart.src__core__lib;
+  var lib$ = Object.create(dart.library);
+  var $which = dartx.which;
+  var $offset = dartx.offset;
+  var $movement = dartx.movement;
+  var $deltaY = dartx.deltaY;
+  var $clamp = dartx.clamp;
+  var $onLoadEnd = dartx.onLoadEnd;
+  var $response = dartx.response;
+  var $onLoad = dartx.onLoad;
+  var $onPlaying = dartx.onPlaying;
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  var $_set = dartx._set;
+  var $getUserMedia = dartx.getUserMedia;
+  var $getContext = dartx.getContext;
+  var $round = dartx.round;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    LinkedHashSetOfintL: () => (T.LinkedHashSetOfintL = dart.constFn(collection.LinkedHashSet$(T.intL())))(),
+    KeyboardEventL: () => (T.KeyboardEventL = dart.constFn(dart.legacy(html.KeyboardEvent)))(),
+    KeyboardEventLToNull: () => (T.KeyboardEventLToNull = dart.constFn(dart.fnType(core.Null, [T.KeyboardEventL()])))(),
+    MouseEventL: () => (T.MouseEventL = dart.constFn(dart.legacy(html.MouseEvent)))(),
+    MouseEventLToNull: () => (T.MouseEventLToNull = dart.constFn(dart.fnType(core.Null, [T.MouseEventL()])))(),
+    WheelEventL: () => (T.WheelEventL = dart.constFn(dart.legacy(html.WheelEvent)))(),
+    WheelEventLToNull: () => (T.WheelEventLToNull = dart.constFn(dart.fnType(core.Null, [T.WheelEventL()])))(),
+    IdentityMapOfintL$intL: () => (T.IdentityMapOfintL$intL = dart.constFn(_js_helper.IdentityMap$(T.intL(), T.intL())))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    CompleterOfStringL: () => (T.CompleterOfStringL = dart.constFn(async.Completer$(T.StringL())))(),
+    FutureOrOfStringL: () => (T.FutureOrOfStringL = dart.constFn(async.FutureOr$(T.StringL())))(),
+    FutureOrLOfStringL: () => (T.FutureOrLOfStringL = dart.constFn(dart.legacy(T.FutureOrOfStringL())))(),
+    ProgressEventL: () => (T.ProgressEventL = dart.constFn(dart.legacy(html.ProgressEvent)))(),
+    ProgressEventLToNull: () => (T.ProgressEventLToNull = dart.constFn(dart.fnType(core.Null, [T.ProgressEventL()])))(),
+    MapL: () => (T.MapL = dart.constFn(dart.legacy(core.Map)))(),
+    CompleterOfMapL: () => (T.CompleterOfMapL = dart.constFn(async.Completer$(T.MapL())))(),
+    FutureOrOfMapL: () => (T.FutureOrOfMapL = dart.constFn(async.FutureOr$(T.MapL())))(),
+    FutureOrLOfMapL: () => (T.FutureOrLOfMapL = dart.constFn(dart.legacy(T.FutureOrOfMapL())))(),
+    ImageElementL: () => (T.ImageElementL = dart.constFn(dart.legacy(html.ImageElement)))(),
+    CompleterOfImageElementL: () => (T.CompleterOfImageElementL = dart.constFn(async.Completer$(T.ImageElementL())))(),
+    EventL: () => (T.EventL = dart.constFn(dart.legacy(html.Event)))(),
+    EventLTovoid: () => (T.EventLTovoid = dart.constFn(dart.fnType(dart.void, [T.EventL()])))(),
+    VideoElementL: () => (T.VideoElementL = dart.constFn(dart.legacy(html.VideoElement)))(),
+    CompleterOfVideoElementL: () => (T.CompleterOfVideoElementL = dart.constFn(async.Completer$(T.VideoElementL())))(),
+    FutureOfImageElementL: () => (T.FutureOfImageElementL = dart.constFn(async.Future$(T.ImageElementL())))(),
+    FutureLOfImageElementL: () => (T.FutureLOfImageElementL = dart.constFn(dart.legacy(T.FutureOfImageElementL())))(),
+    ListOfFutureLOfImageElementL: () => (T.ListOfFutureLOfImageElementL = dart.constFn(core.List$(T.FutureLOfImageElementL())))(),
+    MediaStreamL: () => (T.MediaStreamL = dart.constFn(dart.legacy(html.MediaStream)))(),
+    MediaStreamLToNull: () => (T.MediaStreamLToNull = dart.constFn(dart.fnType(core.Null, [T.MediaStreamL()])))(),
+    ObjectL: () => (T.ObjectL = dart.constFn(dart.legacy(core.Object)))(),
+    ObjectLToNull: () => (T.ObjectLToNull = dart.constFn(dart.fnType(core.Null, [T.ObjectL()])))(),
+    CanvasRenderingContext2DL: () => (T.CanvasRenderingContext2DL = dart.constFn(dart.legacy(html.CanvasRenderingContext2D)))(),
+    JSArrayOfStringL: () => (T.JSArrayOfStringL = dart.constFn(_interceptors.JSArray$(T.StringL())))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  var C = [];
+  var I = ["package:flutter_wgl/src/webhelper/lib.dart"];
+  var _currentlyPressedKeys = dart.privateName(lib$, "_currentlyPressedKeys");
+  var _justPressedKeys = dart.privateName(lib$, "_justPressedKeys");
+  var _justReleasedKeys = dart.privateName(lib$, "_justReleasedKeys");
+  lib$.Keyboard = class Keyboard extends core.Object {
+    currentlyPressedKey(key) {
+      return this[_currentlyPressedKeys].contains(key);
+    }
+    justPressedKey(key) {
+      return this[_justPressedKeys].contains(key);
+    }
+    justReleasedKey(key) {
+      return this[_justReleasedKeys].contains(key);
+    }
+    AfterFrameCleanup() {
+      this[_justReleasedKeys].clear();
+      this[_justPressedKeys].clear();
+    }
+  };
+  (lib$.Keyboard.new = function(elem) {
+    this[_currentlyPressedKeys] = T.LinkedHashSetOfintL().new();
+    this[_justPressedKeys] = T.LinkedHashSetOfintL().new();
+    this[_justReleasedKeys] = T.LinkedHashSetOfintL().new();
+    if (elem == null) elem = html.document;
+    dart.dsend(dart.dload(elem, 'onKeyDown'), 'listen', [dart.fn(e => {
+        this[_currentlyPressedKeys].add(e[$which]);
+        this[_justPressedKeys].add(e[$which]);
+      }, T.KeyboardEventLToNull())]);
+    dart.dsend(dart.dload(elem, 'onKeyUp'), 'listen', [dart.fn(e => {
+        this[_currentlyPressedKeys].remove(e[$which]);
+        this[_justReleasedKeys].add(e[$which]);
+      }, T.KeyboardEventLToNull())]);
+  }).prototype = lib$.Keyboard.prototype;
+  dart.addTypeTests(lib$.Keyboard);
+  dart.addTypeCaches(lib$.Keyboard);
+  dart.setMethodSignature(lib$.Keyboard, () => ({
+    __proto__: dart.getMethods(lib$.Keyboard.__proto__),
+    currentlyPressedKey: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.int)]),
+    justPressedKey: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.int)]),
+    justReleasedKey: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.int)]),
+    AfterFrameCleanup: dart.fnType(dart.void, [])
+  }));
+  dart.setLibraryUri(lib$.Keyboard, I[0]);
+  dart.setFieldSignature(lib$.Keyboard, () => ({
+    __proto__: dart.getFields(lib$.Keyboard.__proto__),
+    [_currentlyPressedKeys]: dart.finalFieldType(dart.legacy(core.Set$(dart.legacy(core.int)))),
+    [_justPressedKeys]: dart.finalFieldType(dart.legacy(core.Set$(dart.legacy(core.int)))),
+    [_justReleasedKeys]: dart.finalFieldType(dart.legacy(core.Set$(dart.legacy(core.int))))
+  }));
+  dart.defineLazy(lib$.Keyboard, {
+    /*lib$.Keyboard.PAGEUP*/get PAGEUP() {
+      return 33;
+    },
+    /*lib$.Keyboard.PAGEDOWN*/get PAGEDOWN() {
+      return 34;
+    },
+    /*lib$.Keyboard.END*/get END() {
+      return 35;
+    },
+    /*lib$.Keyboard.HOME*/get HOME() {
+      return 36;
+    },
+    /*lib$.Keyboard.LEFT*/get LEFT() {
+      return 37;
+    },
+    /*lib$.Keyboard.RIGHT*/get RIGHT() {
+      return 39;
+    },
+    /*lib$.Keyboard.UP*/get UP() {
+      return 38;
+    },
+    /*lib$.Keyboard.DOWN*/get DOWN() {
+      return 40;
+    },
+    /*lib$.Keyboard.SPACE*/get SPACE() {
+      return 32;
+    },
+    /*lib$.Keyboard.SHIFT*/get SHIFT() {
+      return 16;
+    },
+    /*lib$.Keyboard.CTRL*/get CTRL() {
+      return 17;
+    },
+    /*lib$.Keyboard.ALT*/get ALT() {
+      return 18;
+    },
+    /*lib$.Keyboard.TAB*/get TAB() {
+      return 9;
+    },
+    /*lib$.Keyboard.A*/get A() {
+      return 65;
+    },
+    /*lib$.Keyboard.B*/get B() {
+      return 66;
+    },
+    /*lib$.Keyboard.C*/get C() {
+      return 67;
+    },
+    /*lib$.Keyboard.D*/get D() {
+      return 68;
+    },
+    /*lib$.Keyboard.E*/get E() {
+      return 69;
+    },
+    /*lib$.Keyboard.F*/get F() {
+      return 70;
+    },
+    /*lib$.Keyboard.G*/get G() {
+      return 71;
+    },
+    /*lib$.Keyboard.H*/get H() {
+      return 72;
+    },
+    /*lib$.Keyboard.I*/get I() {
+      return 73;
+    },
+    /*lib$.Keyboard.J*/get J() {
+      return 74;
+    },
+    /*lib$.Keyboard.K*/get K() {
+      return 75;
+    },
+    /*lib$.Keyboard.L*/get L() {
+      return 76;
+    },
+    /*lib$.Keyboard.M*/get M() {
+      return 77;
+    },
+    /*lib$.Keyboard.N*/get N() {
+      return 78;
+    },
+    /*lib$.Keyboard.O*/get O() {
+      return 79;
+    },
+    /*lib$.Keyboard.P*/get P() {
+      return 80;
+    },
+    /*lib$.Keyboard.Q*/get Q() {
+      return 81;
+    },
+    /*lib$.Keyboard.R*/get R() {
+      return 82;
+    },
+    /*lib$.Keyboard.S*/get S() {
+      return 83;
+    },
+    /*lib$.Keyboard.T*/get T() {
+      return 84;
+    },
+    /*lib$.Keyboard.U*/get U() {
+      return 85;
+    },
+    /*lib$.Keyboard.V*/get V() {
+      return 86;
+    },
+    /*lib$.Keyboard.W*/get W() {
+      return 87;
+    },
+    /*lib$.Keyboard.X*/get X() {
+      return 88;
+    },
+    /*lib$.Keyboard.Y*/get Y() {
+      return 89;
+    },
+    /*lib$.Keyboard.Z*/get Z() {
+      return 90;
+    },
+    /*lib$.Keyboard.F1*/get F1() {
+      return 112;
+    },
+    /*lib$.Keyboard.F2*/get F2() {
+      return 113;
+    },
+    /*lib$.Keyboard.F3*/get F3() {
+      return 114;
+    },
+    /*lib$.Keyboard.F4*/get F4() {
+      return 115;
+    },
+    /*lib$.Keyboard.F5*/get F5() {
+      return 116;
+    },
+    /*lib$.Keyboard.F6*/get F6() {
+      return 117;
+    },
+    /*lib$.Keyboard.F7*/get F7() {
+      return 118;
+    },
+    /*lib$.Keyboard.F8*/get F8() {
+      return 119;
+    },
+    /*lib$.Keyboard.F9*/get F9() {
+      return 120;
+    },
+    /*lib$.Keyboard.F10*/get F10() {
+      return 121;
+    },
+    /*lib$.Keyboard.F11*/get F11() {
+      return 122;
+    },
+    /*lib$.Keyboard.F12*/get F12() {
+      return 123;
+    }
+  }, true);
+  var moveDeltaX = dart.privateName(lib$, "Mouse.moveDeltaX");
+  var moveDeltaY = dart.privateName(lib$, "Mouse.moveDeltaY");
+  var wheelDeltaY = dart.privateName(lib$, "Mouse.wheelDeltaY");
+  var currentX = dart.privateName(lib$, "Mouse.currentX");
+  var currentY = dart.privateName(lib$, "Mouse.currentY");
+  var _currentlyPressedButtons = dart.privateName(lib$, "_currentlyPressedButtons");
+  var _justPressedButtons = dart.privateName(lib$, "_justPressedButtons");
+  var _justReleasedButtons = dart.privateName(lib$, "_justReleasedButtons");
+  lib$.Mouse = class Mouse extends core.Object {
+    get moveDeltaX() {
+      return this[moveDeltaX];
+    }
+    set moveDeltaX(value) {
+      this[moveDeltaX] = value;
+    }
+    get moveDeltaY() {
+      return this[moveDeltaY];
+    }
+    set moveDeltaY(value) {
+      this[moveDeltaY] = value;
+    }
+    get wheelDeltaY() {
+      return this[wheelDeltaY];
+    }
+    set wheelDeltaY(value) {
+      this[wheelDeltaY] = value;
+    }
+    get currentX() {
+      return this[currentX];
+    }
+    set currentX(value) {
+      this[currentX] = value;
+    }
+    get currentY() {
+      return this[currentY];
+    }
+    set currentY(value) {
+      this[currentY] = value;
+    }
+    currentlyPressedButton(key) {
+      return this[_currentlyPressedButtons].contains(key);
+    }
+    justPressedButton(key) {
+      return this[_justPressedButtons].contains(key);
+    }
+    justReleasedButton(key) {
+      return this[_justReleasedButtons].contains(key);
+    }
+    AfterFrameCleanup() {
+      this.moveDeltaY = 0;
+      this.moveDeltaX = 0;
+      this.wheelDeltaY = 0;
+      this[_justReleasedButtons].clear();
+      this[_justPressedButtons].clear();
+    }
+  };
+  (lib$.Mouse.new = function(elem) {
+    this[_currentlyPressedButtons] = T.LinkedHashSetOfintL().new();
+    this[_justPressedButtons] = T.LinkedHashSetOfintL().new();
+    this[_justReleasedButtons] = T.LinkedHashSetOfintL().new();
+    this[moveDeltaX] = 0;
+    this[moveDeltaY] = 0;
+    this[wheelDeltaY] = 0;
+    this[currentX] = 0;
+    this[currentY] = 0;
+    if (elem == null) elem = html.document;
+    dart.dsend(dart.dload(elem, 'onMouseMove'), 'listen', [dart.fn(e => {
+        e.preventDefault();
+        this.currentX = dart.asNullableInt(e[$offset].x);
+        this.currentY = dart.asNullableInt(e[$offset].y);
+        this.moveDeltaX = dart.asNullableInt(e[$movement].x);
+        this.moveDeltaY = dart.asNullableInt(e[$movement].y);
+      }, T.MouseEventLToNull())]);
+    dart.dsend(dart.dload(elem, 'onMouseDown'), 'listen', [dart.fn(e => {
+        e.preventDefault();
+        core.print("BUTTON " + dart.str(e.button));
+        this[_currentlyPressedButtons].add(e.button);
+        this[_justPressedButtons].add(e.button);
+      }, T.MouseEventLToNull())]);
+    dart.dsend(dart.dload(elem, 'onMouseUp'), 'listen', [dart.fn(e => {
+        e.preventDefault();
+        this[_currentlyPressedButtons].remove(e.button);
+        this[_justReleasedButtons].add(e.button);
+      }, T.MouseEventLToNull())]);
+    dart.dsend(dart.dload(elem, 'onMouseWheel'), 'listen', [dart.fn(e => {
+        e.preventDefault();
+        this.wheelDeltaY = dart.asNullableInt(e[$deltaY]);
+      }, T.WheelEventLToNull())]);
+  }).prototype = lib$.Mouse.prototype;
+  dart.addTypeTests(lib$.Mouse);
+  dart.addTypeCaches(lib$.Mouse);
+  dart.setMethodSignature(lib$.Mouse, () => ({
+    __proto__: dart.getMethods(lib$.Mouse.__proto__),
+    currentlyPressedButton: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.int)]),
+    justPressedButton: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.int)]),
+    justReleasedButton: dart.fnType(dart.legacy(core.bool), [dart.legacy(core.int)]),
+    AfterFrameCleanup: dart.fnType(dart.void, [])
+  }));
+  dart.setLibraryUri(lib$.Mouse, I[0]);
+  dart.setFieldSignature(lib$.Mouse, () => ({
+    __proto__: dart.getFields(lib$.Mouse.__proto__),
+    [_currentlyPressedButtons]: dart.finalFieldType(dart.legacy(core.Set$(dart.legacy(core.int)))),
+    [_justPressedButtons]: dart.finalFieldType(dart.legacy(core.Set$(dart.legacy(core.int)))),
+    [_justReleasedButtons]: dart.finalFieldType(dart.legacy(core.Set$(dart.legacy(core.int)))),
+    moveDeltaX: dart.fieldType(dart.legacy(core.int)),
+    moveDeltaY: dart.fieldType(dart.legacy(core.int)),
+    wheelDeltaY: dart.fieldType(dart.legacy(core.int)),
+    currentX: dart.fieldType(dart.legacy(core.int)),
+    currentY: dart.fieldType(dart.legacy(core.int))
+  }));
+  dart.defineLazy(lib$.Mouse, {
+    /*lib$.Mouse.RIGHT*/get RIGHT() {
+      return 2;
+    },
+    /*lib$.Mouse.MIDDLE*/get MIDDLE() {
+      return 1;
+    },
+    /*lib$.Mouse.LEFT*/get LEFT() {
+      return 0;
+    }
+  }, true);
+  var azimuth$ = dart.privateName(lib$, "OrbitCamera.azimuth");
+  var polar$ = dart.privateName(lib$, "OrbitCamera.polar");
+  var roll = dart.privateName(lib$, "OrbitCamera.roll");
+  var mouseWheelFactor = dart.privateName(lib$, "OrbitCamera.mouseWheelFactor");
+  var keyboard = dart.privateName(lib$, "OrbitCamera.keyboard");
+  var mouse = dart.privateName(lib$, "OrbitCamera.mouse");
+  var _lookAtPos = dart.privateName(lib$, "_lookAtPos");
+  var _radius$ = dart.privateName(lib$, "_radius");
+  lib$.OrbitCamera = class OrbitCamera extends lib.Spatial {
+    get azimuth() {
+      return this[azimuth$];
+    }
+    set azimuth(value) {
+      this[azimuth$] = value;
+    }
+    get polar() {
+      return this[polar$];
+    }
+    set polar(value) {
+      this[polar$] = value;
+    }
+    get roll() {
+      return this[roll];
+    }
+    set roll(value) {
+      this[roll] = value;
+    }
+    get mouseWheelFactor() {
+      return this[mouseWheelFactor];
+    }
+    set mouseWheelFactor(value) {
+      this[mouseWheelFactor] = value;
+    }
+    get keyboard() {
+      return this[keyboard];
+    }
+    set keyboard(value) {
+      super.keyboard = value;
+    }
+    get mouse() {
+      return this[mouse];
+    }
+    set mouse(value) {
+      super.mouse = value;
+    }
+    setLookAt(v) {
+      this[_lookAtPos].setFrom(v);
+    }
+    setRadius(v) {
+      this[_radius$] = v;
+    }
+    animate(elapsed) {
+      if (dart.test(this.mouse.currentlyPressedButton(0)) || dart.test(this.mouse.currentlyPressedButton(1))) {
+        this.azimuth = dart.notNull(this.azimuth) + dart.notNull(this.mouse.moveDeltaX) * 0.01;
+        this.polar = dart.notNull(this.polar) + dart.notNull(this.mouse.moveDeltaY) * 0.01;
+      }
+      if (dart.test(this.keyboard.currentlyPressedKey(37))) {
+        this.azimuth = dart.notNull(this.azimuth) + 0.03;
+      } else if (dart.test(this.keyboard.currentlyPressedKey(39))) {
+        this.azimuth = dart.notNull(this.azimuth) - 0.03;
+      }
+      if (dart.test(this.keyboard.currentlyPressedKey(38))) {
+        this.polar = dart.notNull(this.polar) + 0.03;
+      } else if (dart.test(this.keyboard.currentlyPressedKey(40))) {
+        this.polar = dart.notNull(this.polar) - 0.03;
+      }
+      if (dart.test(this.keyboard.currentlyPressedKey(33))) {
+        this[_radius$] = dart.notNull(this[_radius$]) * 0.99;
+      } else if (dart.test(this.keyboard.currentlyPressedKey(34))) {
+        this[_radius$] = dart.notNull(this[_radius$]) * 1.01;
+      }
+      if (dart.test(this.keyboard.currentlyPressedKey(32))) {
+        this.azimuth = 0.0;
+        this.polar = 0.0;
+      }
+      let d = dart.notNull(this.mouse.wheelDeltaY) * dart.notNull(this.mouseWheelFactor);
+      if (dart.notNull(this[_radius$]) - d > 0) this[_radius$] = dart.notNull(this[_radius$]) - d;
+      this.polar = this.polar[$clamp](-3.141592653589793 / 2 + 0.1, 3.141592653589793 / 2 - 0.1);
+      this.setPosFromSpherical(this[_radius$], this.azimuth, this.polar);
+      this.addPosFromVec(this[_lookAtPos]);
+      this.lookAt(this[_lookAtPos]);
+      this.rollLeft(this.roll);
+      this.keyboard.AfterFrameCleanup();
+      this.mouse.AfterFrameCleanup();
+    }
+  };
+  (lib$.OrbitCamera.new = function(_radius, azimuth, polar, eventElement) {
+    this[roll] = 0.0;
+    this[_lookAtPos] = new vector_math.Vector3.zero();
+    this[mouseWheelFactor] = -0.02;
+    this[_radius$] = _radius;
+    this[azimuth$] = azimuth;
+    this[polar$] = polar;
+    this[keyboard] = new lib$.Keyboard.new(null);
+    this[mouse] = new lib$.Mouse.new(eventElement);
+    lib$.OrbitCamera.__proto__.new.call(this, "camera:orbit");
+    ;
+  }).prototype = lib$.OrbitCamera.prototype;
+  dart.addTypeTests(lib$.OrbitCamera);
+  dart.addTypeCaches(lib$.OrbitCamera);
+  dart.setMethodSignature(lib$.OrbitCamera, () => ({
+    __proto__: dart.getMethods(lib$.OrbitCamera.__proto__),
+    setLookAt: dart.fnType(dart.void, [dart.legacy(vector_math.Vector3)]),
+    setRadius: dart.fnType(dart.void, [dart.legacy(core.double)]),
+    animate: dart.fnType(dart.void, [dart.legacy(core.double)])
+  }));
+  dart.setLibraryUri(lib$.OrbitCamera, I[0]);
+  dart.setFieldSignature(lib$.OrbitCamera, () => ({
+    __proto__: dart.getFields(lib$.OrbitCamera.__proto__),
+    [_radius$]: dart.fieldType(dart.legacy(core.double)),
+    azimuth: dart.fieldType(dart.legacy(core.double)),
+    polar: dart.fieldType(dart.legacy(core.double)),
+    roll: dart.fieldType(dart.legacy(core.double)),
+    [_lookAtPos]: dart.finalFieldType(dart.legacy(vector_math.Vector3)),
+    mouseWheelFactor: dart.fieldType(dart.legacy(core.num)),
+    keyboard: dart.finalFieldType(dart.legacy(lib$.Keyboard)),
+    mouse: dart.finalFieldType(dart.legacy(lib$.Mouse))
+  }));
+  var moveDeltaX$ = dart.privateName(lib$, "MidiInput.moveDeltaX");
+  var moveDeltaY$ = dart.privateName(lib$, "MidiInput.moveDeltaY");
+  var wheelDeltaY$ = dart.privateName(lib$, "MidiInput.wheelDeltaY");
+  var currentX$ = dart.privateName(lib$, "MidiInput.currentX");
+  var currentY$ = dart.privateName(lib$, "MidiInput.currentY");
+  var _currentControlValue = dart.privateName(lib$, "_currentControlValue");
+  var _justUpdatedControls = dart.privateName(lib$, "_justUpdatedControls");
+  lib$.MidiInput = class MidiInput extends core.Object {
+    get moveDeltaX() {
+      return this[moveDeltaX$];
+    }
+    set moveDeltaX(value) {
+      this[moveDeltaX$] = value;
+    }
+    get moveDeltaY() {
+      return this[moveDeltaY$];
+    }
+    set moveDeltaY(value) {
+      this[moveDeltaY$] = value;
+    }
+    get wheelDeltaY() {
+      return this[wheelDeltaY$];
+    }
+    set wheelDeltaY(value) {
+      this[wheelDeltaY$] = value;
+    }
+    get currentX() {
+      return this[currentX$];
+    }
+    set currentX(value) {
+      this[currentX$] = value;
+    }
+    get currentY() {
+      return this[currentY$];
+    }
+    set currentY(value) {
+      this[currentY$] = value;
+    }
+  };
+  (lib$.MidiInput.new = function() {
+    this[_currentControlValue] = new (T.IdentityMapOfintL$intL()).new();
+    this[_justUpdatedControls] = T.LinkedHashSetOfintL().new();
+    this[moveDeltaX$] = 0;
+    this[moveDeltaY$] = 0;
+    this[wheelDeltaY$] = 0;
+    this[currentX$] = 0;
+    this[currentY$] = 0;
+  }).prototype = lib$.MidiInput.prototype;
+  dart.addTypeTests(lib$.MidiInput);
+  dart.addTypeCaches(lib$.MidiInput);
+  dart.setLibraryUri(lib$.MidiInput, I[0]);
+  dart.setFieldSignature(lib$.MidiInput, () => ({
+    __proto__: dart.getFields(lib$.MidiInput.__proto__),
+    [_currentControlValue]: dart.finalFieldType(dart.legacy(core.Map$(dart.legacy(core.int), dart.legacy(core.int)))),
+    [_justUpdatedControls]: dart.finalFieldType(dart.legacy(core.Set$(dart.legacy(core.int)))),
+    moveDeltaX: dart.fieldType(dart.legacy(core.int)),
+    moveDeltaY: dart.fieldType(dart.legacy(core.int)),
+    wheelDeltaY: dart.fieldType(dart.legacy(core.int)),
+    currentX: dart.fieldType(dart.legacy(core.int)),
+    currentY: dart.fieldType(dart.legacy(core.int))
+  }));
+  lib$.LoadRaw = function LoadRaw(url) {
+    let c = T.CompleterOfStringL().new();
+    let hr = html.HttpRequest.new();
+    hr.open("GET", url);
+    hr[$onLoadEnd].listen(dart.fn(e => {
+      c.complete(T.FutureOrLOfStringL().as(hr[$response]));
+    }, T.ProgressEventLToNull()));
+    hr.send("");
+    return c.future;
+  };
+  lib$.LoadJson = function LoadJson(url) {
+    let c = T.CompleterOfMapL().new();
+    let hr = html.HttpRequest.new();
+    hr.open("GET", url);
+    hr[$onLoadEnd].listen(dart.fn(e => {
+      c.complete(T.FutureOrLOfMapL().as(convert.json.decode(T.StringL().as(hr[$response]))));
+    }, T.ProgressEventLToNull()));
+    hr.send("");
+    return c.future;
+  };
+  lib$.LoadImage = function LoadImage(url) {
+    let c = T.CompleterOfImageElementL().new();
+    let image = html.ImageElement.new();
+    image[$onLoad].first.then(dart.void, dart.fn(_ => c.complete(image), T.EventLTovoid()));
+    image.src = url;
+    return c.future;
+  };
+  lib$.LoadVideo = function LoadVideo(url) {
+    let c = T.CompleterOfVideoElementL().new();
+    let video = html.VideoElement.new();
+    video.autoplay = true;
+    video.loop = true;
+    video[$onPlaying].first.then(dart.void, dart.fn(_ => c.complete(video), T.EventLTovoid()));
+    video.src = url;
+    return c.future;
+  };
+  lib$.LoadCubeImages = function LoadCubeImages(urlPrefix, urlSuffix) {
+    let out = T.ListOfFutureLOfImageElementL().new(6);
+    for (let i = 0; i < dart.notNull(lib$._kUrlInfix[$length]); i = i + 1) {
+      let c = T.CompleterOfImageElementL().new();
+      let image = html.ImageElement.new();
+      image[$onLoad].first.then(dart.void, dart.fn(_ => c.complete(image), T.EventLTovoid()));
+      image.src = dart.notNull(urlPrefix) + dart.notNull(lib$._kUrlInfix[$_get](i)) + dart.notNull(urlSuffix);
+      out[$_set](i, c.future);
+    }
+    return out;
+  };
+  lib$.MakeVideoElementFromCamera = function MakeVideoElementFromCamera() {
+    let c = T.CompleterOfVideoElementL().new();
+    html.window.navigator[$getUserMedia]({video: true}).then(core.Null, dart.fn(stream => {
+      let t0;
+      let video = (t0 = html.VideoElement.new(), (() => {
+        t0.autoplay = true;
+        return t0;
+      })());
+      video[$onPlaying].first.then(dart.void, dart.fn(_ => c.complete(video), T.EventLTovoid()));
+      video.srcObject = stream;
+    }, T.MediaStreamLToNull())).catchError(dart.fn(error => {
+      lib.LogError("Camera open error " + dart.str(error));
+      c.complete(null);
+    }, T.ObjectLToNull()));
+    return c.future;
+  };
+  lib$.MakeSolidColorCanvas = function MakeSolidColorCanvas(fillStyle) {
+    let canvas = html.CanvasElement.new({width: 2, height: 2});
+    let ctx = T.CanvasRenderingContext2DL().as(canvas[$getContext]("2d"));
+    ctx.fillStyle = fillStyle;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    return canvas;
+  };
+  lib$.MakeSolidColorTexture = function MakeSolidColorTexture(cgl, url, fillStyle) {
+    return new lib.ImageTexture.new(cgl, url, lib$.MakeSolidColorCanvas(fillStyle));
+  };
+  lib$.MakeSolidColorTextureRGB = function MakeSolidColorTextureRGB(cgl, url, rgb) {
+    let r = (255.0 * dart.notNull(rgb.r))[$round]();
+    let g = (255.0 * dart.notNull(rgb.g))[$round]();
+    let b = (255.0 * dart.notNull(rgb.b))[$round]();
+    return new lib.ImageTexture.new(cgl, url, lib$.MakeSolidColorCanvas("rgb(" + dart.str(r) + ", " + dart.str(g) + ", " + dart.str(b) + ")"));
+  };
+  lib$.MakeSolidColorTextureRGBA = function MakeSolidColorTextureRGBA(cgl, url, rgba) {
+    let r = (255.0 * dart.notNull(rgba.r))[$round]();
+    let g = (255.0 * dart.notNull(rgba.g))[$round]();
+    let b = (255.0 * dart.notNull(rgba.b))[$round]();
+    return new lib.ImageTexture.new(cgl, url, lib$.MakeSolidColorCanvas("rgba(" + dart.str(r) + ", " + dart.str(g) + ", " + dart.str(b) + ", " + dart.str(rgba.a) + ")"));
+  };
+  dart.defineLazy(lib$, {
+    /*lib$._kUrlInfix*/get _kUrlInfix() {
+      return T.JSArrayOfStringL().of(["nx", "px", "ny", "py", "nz", "pz"]);
+    }
+  }, true);
+  dart.trackLibraries("packages/flutter_wgl/src/webhelper/lib.dart", {
+    "package:flutter_wgl/src/webhelper/lib.dart": lib$
+  }, {
+    "package:flutter_wgl/src/webhelper/lib.dart": ["http_request.dart", "webtexture.dart", "input.dart", "interactive_camera.dart", "midi_input.dart"]
+  }, '{"version":3,"sourceRoot":"","sources":["input.dart","interactive_camera.dart","midi_input.dart","http_request.dart","webtexture.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../Z:/packages/flutter_wgl/src/webhelper/lib.dart.lib.js"}');
+  // Exports:
+  return {
+    src__webhelper__lib: lib$
+  };
+}));
+
+//# sourceMappingURL=lib.dart.lib.js.map

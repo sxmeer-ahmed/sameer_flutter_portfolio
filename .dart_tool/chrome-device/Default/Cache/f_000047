@@ -1,0 +1,625 @@
+define(['dart_sdk', 'packages/vector_math/vector_math.dart', 'packages/flutter_wgl/src/core/lib.dart'], (function load__packages__flutter_wgl__src__shape__lib_dart(dart_sdk, packages__vector_math__vector_math$46dart, packages__flutter_wgl__src__core__lib$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const math = dart_sdk.math;
+  const _native_typed_data = dart_sdk._native_typed_data;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const vector_math = packages__vector_math__vector_math$46dart.vector_math;
+  const lib = packages__flutter_wgl__src__core__lib$46dart.src__core__lib;
+  var lib$ = Object.create(dart.library);
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  var $add = dartx.add;
+  var $addAll = dartx.addAll;
+  var $_set = dartx._set;
+  var $abs = dartx.abs;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    Vector3L: () => (T.Vector3L = dart.constFn(dart.legacy(vector_math.Vector3)))(),
+    JSArrayOfVector3L: () => (T.JSArrayOfVector3L = dart.constFn(_interceptors.JSArray$(T.Vector3L())))(),
+    Vector2L: () => (T.Vector2L = dart.constFn(dart.legacy(vector_math.Vector2)))(),
+    JSArrayOfVector2L: () => (T.JSArrayOfVector2L = dart.constFn(_interceptors.JSArray$(T.Vector2L())))(),
+    Face3L: () => (T.Face3L = dart.constFn(dart.legacy(lib.Face3)))(),
+    JSArrayOfFace3L: () => (T.JSArrayOfFace3L = dart.constFn(_interceptors.JSArray$(T.Face3L())))(),
+    ListOfVector3L: () => (T.ListOfVector3L = dart.constFn(core.List$(T.Vector3L())))(),
+    ListOfVector2L: () => (T.ListOfVector2L = dart.constFn(core.List$(T.Vector2L())))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    intLAndintLTointL: () => (T.intLAndintLTointL = dart.constFn(dart.fnType(T.intL(), [T.intL(), T.intL()])))(),
+    doubleL: () => (T.doubleL = dart.constFn(dart.legacy(core.double)))(),
+    doubleLAndVector3LTovoid: () => (T.doubleLAndVector3LTovoid = dart.constFn(dart.fnType(dart.void, [T.doubleL(), T.Vector3L()])))(),
+    ListLOfVector3L: () => (T.ListLOfVector3L = dart.constFn(dart.legacy(T.ListOfVector3L())))(),
+    JSArrayOfListLOfVector3L: () => (T.JSArrayOfListLOfVector3L = dart.constFn(_interceptors.JSArray$(T.ListLOfVector3L())))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  var C = [];
+  var I = [
+    "file:///C:/src/flutter/flutter/.pub-cache/git/flutter_wgl-888ff9df99e7c8d564f2c79cad33a729828cdbbc/lib/src/shape/cylinder.dart",
+    "file:///C:/src/flutter/flutter/.pub-cache/git/flutter_wgl-888ff9df99e7c8d564f2c79cad33a729828cdbbc/lib/src/shape/icosahedron.dart",
+    "file:///C:/src/flutter/flutter/.pub-cache/git/flutter_wgl-888ff9df99e7c8d564f2c79cad33a729828cdbbc/lib/src/shape/torusknot.dart",
+    "file:///C:/src/flutter/flutter/.pub-cache/git/flutter_wgl-888ff9df99e7c8d564f2c79cad33a729828cdbbc/lib/src/shape/tube.dart"
+  ];
+  lib$.CubeGeometry = function CubeGeometry(opts) {
+    let x = opts && 'x' in opts ? opts.x : 1;
+    let y = opts && 'y' in opts ? opts.y : 1;
+    let z = opts && 'z' in opts ? opts.z : 1;
+    let uMin = opts && 'uMin' in opts ? opts.uMin : 0;
+    let uMax = opts && 'uMax' in opts ? opts.uMax : 1;
+    let vMin = opts && 'vMin' in opts ? opts.vMin : 0;
+    let vMax = opts && 'vMax' in opts ? opts.vMax : 1;
+    let computeNormals = opts && 'computeNormals' in opts ? opts.computeNormals : true;
+    let vertices = T.JSArrayOfVector3L().of([vector_math.Vector3.new(-dart.notNull(x), -dart.notNull(y), z), vector_math.Vector3.new(x, -dart.notNull(y), z), vector_math.Vector3.new(x, y, z), vector_math.Vector3.new(-dart.notNull(x), y, z), vector_math.Vector3.new(-dart.notNull(x), -dart.notNull(y), -dart.notNull(z)), vector_math.Vector3.new(-dart.notNull(x), y, -dart.notNull(z)), vector_math.Vector3.new(x, y, -dart.notNull(z)), vector_math.Vector3.new(x, -dart.notNull(y), -dart.notNull(z)), vector_math.Vector3.new(-dart.notNull(x), y, -dart.notNull(z)), vector_math.Vector3.new(-dart.notNull(x), y, z), vector_math.Vector3.new(x, y, z), vector_math.Vector3.new(x, y, -dart.notNull(z)), vector_math.Vector3.new(x, -dart.notNull(y), z), vector_math.Vector3.new(-dart.notNull(x), -dart.notNull(y), z), vector_math.Vector3.new(-dart.notNull(x), -dart.notNull(y), -dart.notNull(z)), vector_math.Vector3.new(x, -dart.notNull(y), -dart.notNull(z)), vector_math.Vector3.new(x, -dart.notNull(y), -dart.notNull(z)), vector_math.Vector3.new(x, y, -dart.notNull(z)), vector_math.Vector3.new(x, y, z), vector_math.Vector3.new(x, -dart.notNull(y), z), vector_math.Vector3.new(-dart.notNull(x), -dart.notNull(y), -dart.notNull(z)), vector_math.Vector3.new(-dart.notNull(x), -dart.notNull(y), z), vector_math.Vector3.new(-dart.notNull(x), y, z), vector_math.Vector3.new(-dart.notNull(x), y, -dart.notNull(z))]);
+    let uvs = T.JSArrayOfVector2L().of([vector_math.Vector2.new(uMin, vMin), vector_math.Vector2.new(uMax, vMin), vector_math.Vector2.new(uMax, vMax), vector_math.Vector2.new(uMin, vMax), vector_math.Vector2.new(uMax, vMin), vector_math.Vector2.new(uMax, vMax), vector_math.Vector2.new(uMin, vMax), vector_math.Vector2.new(uMin, vMin), vector_math.Vector2.new(uMin, vMax), vector_math.Vector2.new(uMin, vMin), vector_math.Vector2.new(uMax, vMin), vector_math.Vector2.new(uMax, vMax), vector_math.Vector2.new(uMax, vMax), vector_math.Vector2.new(uMin, vMax), vector_math.Vector2.new(uMin, vMin), vector_math.Vector2.new(uMax, vMin), vector_math.Vector2.new(uMax, vMin), vector_math.Vector2.new(uMax, vMax), vector_math.Vector2.new(uMin, vMax), vector_math.Vector2.new(uMin, vMin), vector_math.Vector2.new(uMin, vMin), vector_math.Vector2.new(uMax, vMin), vector_math.Vector2.new(uMax, vMax), vector_math.Vector2.new(uMin, vMax)]);
+    let gb = new lib.GeometryBuilder.new();
+    gb.EnableAttribute("aTexUV");
+    if (dart.test(computeNormals)) gb.EnableAttribute("aNormal");
+    gb.AddFaces4(6);
+    gb.AddVertices(vertices);
+    gb.AddAttributesVector2("aTexUV", uvs);
+    if (dart.test(computeNormals)) {
+      for (let i = 0; i < dart.notNull(lib$._CubeNormals[$length]); i = i + 1) {
+        let n = lib$._CubeNormals[$_get](i);
+        gb.AddAttributesVector3("aNormal", T.JSArrayOfVector3L().of([n, n, n, n]));
+      }
+    }
+    return gb;
+  };
+  lib$.WedgeGeometry = function WedgeGeometry(opts) {
+    let x = opts && 'x' in opts ? opts.x : 1;
+    let y = opts && 'y' in opts ? opts.y : 1;
+    let z = opts && 'z' in opts ? opts.z : 1;
+    let uMin = opts && 'uMin' in opts ? opts.uMin : 0;
+    let uMax = opts && 'uMax' in opts ? opts.uMax : 1;
+    let vMin = opts && 'vMin' in opts ? opts.vMin : 0;
+    let vMax = opts && 'vMax' in opts ? opts.vMax : 1;
+    let computeNormals = opts && 'computeNormals' in opts ? opts.computeNormals : true;
+    let vertices3 = T.JSArrayOfVector3L().of([vector_math.Vector3.new(-dart.notNull(x), -dart.notNull(y), z), vector_math.Vector3.new(x, -dart.notNull(y), z), vector_math.Vector3.new(-dart.notNull(x), y, z), vector_math.Vector3.new(-dart.notNull(x), -dart.notNull(y), -dart.notNull(z)), vector_math.Vector3.new(-dart.notNull(x), y, -dart.notNull(z)), vector_math.Vector3.new(x, -dart.notNull(y), -dart.notNull(z))]);
+    let vertices4 = T.JSArrayOfVector3L().of([vector_math.Vector3.new(-dart.notNull(x), y, -dart.notNull(z)), vector_math.Vector3.new(-dart.notNull(x), y, z), vector_math.Vector3.new(x, -dart.notNull(y), z), vector_math.Vector3.new(x, -dart.notNull(y), -dart.notNull(z)), vector_math.Vector3.new(x, -dart.notNull(y), z), vector_math.Vector3.new(-dart.notNull(x), -dart.notNull(y), z), vector_math.Vector3.new(-dart.notNull(x), -dart.notNull(y), -dart.notNull(z)), vector_math.Vector3.new(x, -dart.notNull(y), -dart.notNull(z)), vector_math.Vector3.new(-dart.notNull(x), -dart.notNull(y), -dart.notNull(z)), vector_math.Vector3.new(-dart.notNull(x), -dart.notNull(y), z), vector_math.Vector3.new(-dart.notNull(x), y, z), vector_math.Vector3.new(-dart.notNull(x), y, -dart.notNull(z))]);
+    let uvs3 = T.JSArrayOfVector2L().of([vector_math.Vector2.new(uMin, vMin), vector_math.Vector2.new(uMax, vMin), vector_math.Vector2.new(uMax, vMax), vector_math.Vector2.new(uMax, vMin), vector_math.Vector2.new(uMax, vMax), vector_math.Vector2.new(uMin, vMax)]);
+    let uvs4 = T.JSArrayOfVector2L().of([vector_math.Vector2.new(uMin, vMax), vector_math.Vector2.new(uMin, vMin), vector_math.Vector2.new(uMax, vMin), vector_math.Vector2.new(uMax, vMax), vector_math.Vector2.new(uMax, vMax), vector_math.Vector2.new(uMin, vMax), vector_math.Vector2.new(uMin, vMin), vector_math.Vector2.new(uMax, vMin), vector_math.Vector2.new(uMin, vMin), vector_math.Vector2.new(uMax, vMin), vector_math.Vector2.new(uMax, vMax), vector_math.Vector2.new(uMin, vMax)]);
+    let gb = new lib.GeometryBuilder.new();
+    gb.EnableAttribute("aTexUV");
+    gb.EnableAttribute("aNormal");
+    gb.AddFaces3(2);
+    gb.AddVertices(vertices3);
+    gb.AddAttributesVector2("aTexUV", uvs3);
+    gb.AddFaces4(3);
+    gb.AddVertices(vertices4);
+    gb.AddAttributesVector2("aTexUV", uvs4);
+    if (dart.test(computeNormals)) gb.GenerateNormalsAssumingTriangleMode();
+    return gb;
+  };
+  lib$.CylinderGeometry = function CylinderGeometry(radTop, radBot, height, radialSubdivisions, computeNormals) {
+    if (!(dart.notNull(radialSubdivisions) > 2)) dart.assertFailed("must have at least 3 divisions", I[0], 8, 11, "radialSubdivisions >2");
+    let halfHeight = dart.notNull(height) / 2;
+    let vertices = T.JSArrayOfVector3L().of([]);
+    let uvs = T.JSArrayOfVector2L().of([]);
+    let normal = T.JSArrayOfVector3L().of([]);
+    vertices[$add](vector_math.Vector3.new(0.0, halfHeight, 0.0));
+    uvs[$add](vector_math.Vector2.new(0.0, 0.0));
+    if (dart.test(computeNormals)) normal[$add](vector_math.Vector3.new(0.0, 1.0, 0.0));
+    vertices[$add](vector_math.Vector3.new(0.0, -halfHeight, 0.0));
+    uvs[$add](vector_math.Vector2.new(1.0, 1.0));
+    if (dart.test(computeNormals)) normal[$add](vector_math.Vector3.new(0.0, -1.0, 0.0));
+    for (let i = 0; i < dart.notNull(radialSubdivisions); i = i + 1) {
+      let u = i / dart.notNull(radialSubdivisions);
+      let x = math.sin(u * 3.141592653589793 * 2);
+      let z = math.cos(u * 3.141592653589793 * 2);
+      vertices[$add](vector_math.Vector3.new(x * dart.notNull(radTop), halfHeight, z * dart.notNull(radTop)));
+      uvs[$add](vector_math.Vector2.new(u, 1.0));
+      if (dart.test(computeNormals)) normal[$add](vector_math.Vector3.new(0.0, 1.0, 0.0));
+      vertices[$add](vector_math.Vector3.new(x * dart.notNull(radBot), -halfHeight, z * dart.notNull(radBot)));
+      uvs[$add](vector_math.Vector2.new(u, 0.0));
+      if (dart.test(computeNormals)) normal[$add](vector_math.Vector3.new(0.0, -1.0, 0.0));
+    }
+    if (dart.test(computeNormals)) {
+      if (!(vertices[$length] === 2 + 2 * dart.notNull(radialSubdivisions))) dart.assertFailed(null, I[0], 39, 12, "vertices.length == 2 + 2 * radialSubdivisions");
+      if (!(uvs[$length] === 2 + 2 * dart.notNull(radialSubdivisions))) dart.assertFailed(null, I[0], 40, 12, "uvs.length == 2 + 2 * radialSubdivisions");
+      for (let i = 0; i < 2 * dart.notNull(radialSubdivisions); i = i + 2) {
+        vertices[$add](vertices[$_get](i + 2));
+        vertices[$add](vertices[$_get](i + 3));
+        uvs[$add](uvs[$_get](i + 2));
+        uvs[$add](uvs[$_get](i + 3));
+        let a = vertices[$_get](i + 2);
+        let b = vertices[$_get](i + 3);
+        let c = vertices[$_get](i + 4);
+        let temp = new vector_math.Vector3.zero();
+        let norm = new vector_math.Vector3.zero();
+        lib.NormalFromPoints(a, b, c, temp, norm);
+        normal[$add](norm);
+        normal[$add](norm);
+      }
+      if (!(vertices[$length] === 2 + 4 * dart.notNull(radialSubdivisions))) dart.assertFailed(null, I[0], 58, 12, "vertices.length == 2 + 4 * radialSubdivisions");
+    } else {
+      if (!(vertices[$length] === 2 + 2 * dart.notNull(radialSubdivisions))) dart.assertFailed(null, I[0], 60, 12, "vertices.length == 2 + 2 * radialSubdivisions");
+    }
+    let gb = new lib.GeometryBuilder.new();
+    gb.EnableAttribute("aTexUV");
+    gb.AddVertices(vertices);
+    gb.AddAttributesVector2("aTexUV", uvs);
+    if (dart.test(computeNormals)) {
+      gb.EnableAttribute("aNormal");
+      gb.AddAttributesVector3("aNormal", normal);
+    }
+    for (let i = 0; i < dart.notNull(radialSubdivisions); i = i + 1) {
+      let t = i * 2 + 2;
+      let b = t + 1;
+      let j = i + 1;
+      if (j === radialSubdivisions) j = 0;
+      let tnext = j * 2 + 2;
+      let bnext = tnext + 1;
+      gb.AddFace3(0, t, tnext);
+      gb.AddFace3(1, bnext, b);
+      let o = dart.test(computeNormals) ? dart.notNull(radialSubdivisions) * 2 : 0;
+      gb.AddFace4(o + tnext, o + t, o + b, o + bnext);
+    }
+    return gb;
+  };
+  lib$.CylinderGeometryWireframeFriendly = function CylinderGeometryWireframeFriendly(radTop, radBot, height, radialSubdivisions) {
+    let halfHeight = dart.notNull(height) / 2;
+    let top = T.JSArrayOfVector3L().of([]);
+    let bot = T.JSArrayOfVector3L().of([]);
+    for (let i = 0; i < dart.notNull(radialSubdivisions); i = i + 1) {
+      let u = i / dart.notNull(radialSubdivisions) * 3.141592653589793 * 2.0;
+      let x = math.sin(u);
+      let z = math.cos(u);
+      top[$add](vector_math.Vector3.new(dart.notNull(radTop) * x, halfHeight, dart.notNull(radTop) * z));
+      bot[$add](vector_math.Vector3.new(dart.notNull(radBot) * x, -halfHeight, dart.notNull(radBot) * z));
+    }
+    top[$add](top[$_get](0));
+    bot[$add](bot[$_get](0));
+    if (!(top[$length] === dart.notNull(radialSubdivisions) + 1)) dart.assertFailed(null, I[0], 108, 10, "top.length == radialSubdivisions + 1");
+    if (!(bot[$length] === dart.notNull(radialSubdivisions) + 1)) dart.assertFailed(null, I[0], 109, 10, "bot.length == radialSubdivisions + 1");
+    let zero = vector_math.Vector2.new(0.0, 0.0);
+    let centerTop = vector_math.Vector3.new(0.0, halfHeight, 0.0);
+    let centerBot = vector_math.Vector3.new(0.0, -halfHeight, 0.0);
+    let gb = new lib.GeometryBuilder.new();
+    gb.EnableAttribute("aTexUV");
+    gb.AddFaces3(2 * dart.notNull(radialSubdivisions));
+    for (let i = 0; i < dart.notNull(radialSubdivisions); i = i + 1) {
+      gb.AddVertices(T.JSArrayOfVector3L().of([centerTop, top[$_get](i), top[$_get](i + 1)]));
+      gb.AddVertices(T.JSArrayOfVector3L().of([centerBot, bot[$_get](i + 1), bot[$_get](i)]));
+      gb.AddAttributesVector2("aTexUV", T.JSArrayOfVector2L().of([zero, zero, zero]));
+      gb.AddAttributesVector2("aTexUV", T.JSArrayOfVector2L().of([zero, zero, zero]));
+    }
+    gb.AddFaces4(radialSubdivisions);
+    for (let i = 0; i < dart.notNull(radialSubdivisions); i = i + 1) {
+      gb.AddVertices(T.JSArrayOfVector3L().of([top[$_get](i + 1), top[$_get](i), bot[$_get](i), bot[$_get](i + 1)]));
+      gb.AddAttributesVector2("aTexUV", T.JSArrayOfVector2L().of([zero, zero, zero, zero]));
+    }
+    return gb;
+  };
+  lib$.ConeGeometryWireframeFrienly = function ConeGeometryWireframeFrienly(rad, height, radialSubdivisions) {
+    let halfHeight = dart.notNull(height) / 2;
+    let top = vector_math.Vector3.new(0.0, halfHeight, 0.0);
+    let bot = T.JSArrayOfVector3L().of([]);
+    for (let i = 0; i < dart.notNull(radialSubdivisions); i = i + 1) {
+      let u = i / dart.notNull(radialSubdivisions) * 3.141592653589793 * 2.0;
+      let x = math.sin(u);
+      let z = math.cos(u);
+      bot[$add](vector_math.Vector3.new(dart.notNull(rad) * x, -halfHeight, dart.notNull(rad) * z));
+    }
+    bot[$add](bot[$_get](0));
+    if (!(bot[$length] === dart.notNull(radialSubdivisions) + 1)) dart.assertFailed(null, I[0], 156, 10, "bot.length == radialSubdivisions + 1");
+    let zero = vector_math.Vector2.new(0.0, 0.0);
+    let centerBot = vector_math.Vector3.new(0.0, -halfHeight, 0.0);
+    let gb = new lib.GeometryBuilder.new();
+    gb.EnableAttribute("aTexUV");
+    gb.AddFaces3(radialSubdivisions);
+    for (let i = 0; i < dart.notNull(radialSubdivisions); i = i + 1) {
+      gb.AddVertices(T.JSArrayOfVector3L().of([centerBot, bot[$_get](i + 1), bot[$_get](i)]));
+      gb.AddAttributesVector2("aTexUV", T.JSArrayOfVector2L().of([zero, zero, zero]));
+    }
+    gb.AddFaces3(radialSubdivisions);
+    for (let i = 0; i < dart.notNull(radialSubdivisions); i = i + 1) {
+      gb.AddVertices(T.JSArrayOfVector3L().of([top, bot[$_get](i), bot[$_get](i + 1)]));
+      gb.AddAttributesVector2("aTexUV", T.JSArrayOfVector2L().of([zero, zero, zero]));
+    }
+    return gb;
+  };
+  lib$.getU2 = function getU2(z, x) {
+    return 0.5 * (1.0 + math.atan2(z, x) * (1 / 3.141592653589793));
+  };
+  lib$.getV2 = function getV2(y) {
+    return math.acos(y) * (1 / 3.141592653589793);
+  };
+  lib$.IcosahedronGeometry = function IcosahedronGeometry(opts) {
+    let t0, t0$, t0$0;
+    let subdivisions = opts && 'subdivisions' in opts ? opts.subdivisions : 4;
+    let scale = opts && 'scale' in opts ? opts.scale : 1;
+    let computeNormals = opts && 'computeNormals' in opts ? opts.computeNormals : true;
+    let faces = T.JSArrayOfFace3L().of([]);
+    let vertices = T.JSArrayOfVector3L().of([]);
+    faces[$addAll](lib$.IcosahedronFaceList);
+    vertices[$addAll](lib$.IcosahedronVertexList);
+    for (let i = 0; i < dart.notNull(subdivisions); i = i + 1) {
+      let tmp = T.JSArrayOfFace3L().of([]);
+      for (let f of faces) {
+        let a = vector_math.Vector3.copy(vertices[$_get](f.a));
+        t0 = a;
+        (() => {
+          t0.add(vertices[$_get](f.b));
+          t0.scale(0.5);
+          t0.normalize();
+          return t0;
+        })();
+        let b = vector_math.Vector3.copy(vertices[$_get](f.b));
+        t0$ = b;
+        (() => {
+          t0$.add(vertices[$_get](f.c));
+          t0$.scale(0.5);
+          t0$.normalize();
+          return t0$;
+        })();
+        let c = vector_math.Vector3.copy(vertices[$_get](f.c));
+        t0$0 = c;
+        (() => {
+          t0$0.add(vertices[$_get](f.a));
+          t0$0.scale(0.5);
+          t0$0.normalize();
+          return t0$0;
+        })();
+        let ia = vertices[$length];
+        vertices[$add](a);
+        let ib = vertices[$length];
+        vertices[$add](b);
+        let ic = vertices[$length];
+        vertices[$add](c);
+        tmp[$add](new lib.Face3.new(f.a, ia, ic));
+        tmp[$add](new lib.Face3.new(f.b, ib, ia));
+        tmp[$add](new lib.Face3.new(f.c, ic, ib));
+        tmp[$add](new lib.Face3.new(ia, ib, ic));
+      }
+      faces = tmp;
+    }
+    let gb = new lib.GeometryBuilder.new();
+    gb.EnableAttribute("aTexUV");
+    if (dart.test(computeNormals)) {
+      gb.EnableAttribute("aNormal");
+    }
+    for (let f of faces) {
+      let v1 = vertices[$_get](f.a);
+      if (!(dart.notNull(v1.length) < 1.01 && dart.notNull(v1.length) > 0.99)) dart.assertFailed(null, I[1], 133, 12, "v1.length < 1.01 && v1.length > 0.99");
+      let v2 = vertices[$_get](f.b);
+      if (!(dart.notNull(v2.length) < 1.01 && dart.notNull(v2.length) > 0.99)) dart.assertFailed(null, I[1], 135, 12, "v2.length < 1.01 && v2.length > 0.99");
+      let v3 = vertices[$_get](f.c);
+      if (!(dart.notNull(v3.length) < 1.01 && dart.notNull(v3.length) > 0.99)) dart.assertFailed(null, I[1], 137, 12, "v3.length < 1.01 && v3.length > 0.99");
+      let t1 = vector_math.Vector2.new(lib$.getU2(v1.z, v1.x), lib$.getV2(v1.y));
+      let t2 = vector_math.Vector2.new(lib$.getU2(v2.z, v2.x), lib$.getV2(v2.y));
+      let t3 = vector_math.Vector2.new(lib$.getU2(v3.z, v3.x), lib$.getV2(v3.y));
+      if (dart.test(computeNormals)) {
+        gb.AddAttributesVector3("aNormal", T.JSArrayOfVector3L().of([v1, v2, v3]));
+      }
+      gb.AddVerticesFace3(T.JSArrayOfVector3L().of([v1.scaled(scale), v2.scaled(scale), v3.scaled(scale)]));
+      gb.AddAttributesVector2("aTexUV", T.JSArrayOfVector2L().of([t1, t2, t3]));
+    }
+    return gb;
+  };
+  lib$.QuadGeometry = function QuadGeometry(size) {
+    let vertices = T.JSArrayOfVector3L().of([vector_math.Vector3.new(-1.0 * dart.notNull(size), -1.0 * dart.notNull(size), 0.0), vector_math.Vector3.new(1.0 * dart.notNull(size), -1.0 * dart.notNull(size), 0.0), vector_math.Vector3.new(1.0 * dart.notNull(size), 1.0 * dart.notNull(size), 0.0), vector_math.Vector3.new(-1.0 * dart.notNull(size), 1.0 * dart.notNull(size), 0.0)]);
+    let uvs = T.JSArrayOfVector2L().of([vector_math.Vector2.new(0.0, 0.0), vector_math.Vector2.new(1.0, 0.0), vector_math.Vector2.new(1.0, 1.0), vector_math.Vector2.new(0.0, 1.0)]);
+    let n = vector_math.Vector3.new(0.0, 0.0, 1.0);
+    let normals = T.JSArrayOfVector3L().of([n, n, n, n]);
+    let gb = new lib.GeometryBuilder.new();
+    gb.EnableAttribute("aTexUV");
+    gb.AddVerticesFace4(vertices);
+    gb.AddAttributesVector2("aTexUV", uvs);
+    gb.EnableAttribute("aNormal");
+    gb.AddAttributesVector3("aNormal", normals);
+    return gb;
+  };
+  lib$.GridGeometry = function GridGeometry(xstrips, ystrips, xlen, ylen) {
+    let xoffset = dart.notNull(xlen) * 0.5;
+    let yoffset = dart.notNull(ylen) * 0.5;
+    let xdelta = dart.notNull(xlen) / dart.notNull(xstrips);
+    let ydelta = dart.notNull(xlen) / dart.notNull(ystrips);
+    let normal = vector_math.Vector3.new(0.0, 0.0, 1.0);
+    let vertices = T.ListOfVector3L().new((dart.notNull(xstrips) + 1) * (dart.notNull(ystrips) + 1));
+    let normals = T.ListOfVector3L().new((dart.notNull(xstrips) + 1) * (dart.notNull(ystrips) + 1));
+    let uvs = T.ListOfVector2L().new((dart.notNull(xstrips) + 1) * (dart.notNull(ystrips) + 1));
+    function index(x, y) {
+      return dart.notNull(x) * (dart.notNull(xstrips) + 1) + dart.notNull(y);
+    }
+    dart.fn(index, T.intLAndintLTointL());
+    for (let x = 0; x <= dart.notNull(xstrips); x = x + 1) {
+      for (let y = 0; y <= dart.notNull(ystrips); y = y + 1) {
+        let ii = index(x, y);
+        vertices[$_set](ii, vector_math.Vector3.new(x * xdelta - xoffset, y * ydelta - yoffset, 0.0));
+        normals[$_set](ii, normal);
+        uvs[$_set](ii, vector_math.Vector2.new(x / dart.notNull(xstrips), y / dart.notNull(ystrips)));
+      }
+    }
+    let gb = new lib.GeometryBuilder.new();
+    gb.AddVertices(vertices);
+    for (let x = 0; x < dart.notNull(xstrips); x = x + 1) {
+      for (let y = 0; y < dart.notNull(ystrips); y = y + 1) {
+        gb.AddFace4(index(x, y), index(x + 1, y), index(x + 1, y + 1), index(x, y + 1));
+      }
+    }
+    gb.EnableAttribute("aTexUV");
+    gb.AddAttributesVector2("aTexUV", uvs);
+    gb.EnableAttribute("aNormal");
+    gb.AddAttributesVector3("aNormal", normals);
+    return gb;
+  };
+  lib$.TorusKnotGetPos = function TorusKnotGetPos(u, q, p, radius, heightScale, vec) {
+    let cq = math.cos(dart.notNull(q) * dart.notNull(u));
+    let sq = math.sin(dart.notNull(q) * dart.notNull(u));
+    let cp = math.cos(dart.notNull(p) * dart.notNull(u));
+    let sp = math.sin(dart.notNull(p) * dart.notNull(u));
+    vec.x = dart.notNull(radius) * (2.0 + cq) * 0.5 * cp;
+    vec.y = dart.notNull(radius) * (2.0 + cq) * 0.5 * sp;
+    vec.z = dart.notNull(heightScale) * dart.notNull(radius) * 0.5 * sq;
+  };
+  lib$.TorusKnotGeometry = function TorusKnotGeometry(opts) {
+    let radius = opts && 'radius' in opts ? opts.radius : 20;
+    let tubeRadius = opts && 'tubeRadius' in opts ? opts.tubeRadius : 4;
+    let segmentsR = opts && 'segmentsR' in opts ? opts.segmentsR : 128;
+    let segmentsT = opts && 'segmentsT' in opts ? opts.segmentsT : 16;
+    let p = opts && 'p' in opts ? opts.p : 2;
+    let q = opts && 'q' in opts ? opts.q : 3;
+    let heightScale = opts && 'heightScale' in opts ? opts.heightScale : 1;
+    let wrap = opts && 'wrap' in opts ? opts.wrap : false;
+    let computeUVs = opts && 'computeUVs' in opts ? opts.computeUVs : true;
+    let computeNormals = opts && 'computeNormals' in opts ? opts.computeNormals : true;
+    let inside = opts && 'inside' in opts ? opts.inside : false;
+    function curveFunc(u, out) {
+      lib$.TorusKnotGetPos(u, q, p, radius, heightScale, out);
+    }
+    dart.fn(curveFunc, T.doubleLAndVector3LTovoid());
+    let pointsAndTangents = lib$.ParametricCurvePointsAndTangents(curveFunc, 0.0, 2.0 * 3.141592653589793, segmentsR, {halfOpen: true});
+    if (!dart.test(wrap)) {
+      pointsAndTangents[$add](pointsAndTangents[$_get](0));
+      pointsAndTangents[$add](pointsAndTangents[$_get](1));
+    }
+    let h = dart.notNull(segmentsR) + (dart.test(wrap) ? 0 : 1);
+    if (!(pointsAndTangents[$length] === 2 * h)) dart.assertFailed(null, I[2], 43, 10, "pointsAndTangents.length == 2 * h");
+    let bands = lib$.TubeHullBands(pointsAndTangents, segmentsT, tubeRadius);
+    if (!dart.test(wrap)) {
+      for (let b of bands) {
+        b[$add](b[$_get](0));
+        b[$add](b[$_get](1));
+      }
+    }
+    if (!(bands[$length] === h)) dart.assertFailed(null, I[2], 53, 10, "bands.length == h");
+    let w = dart.notNull(segmentsT) + (dart.test(wrap) ? 0 : 1);
+    if (!(bands[$_get](0)[$length] === 2 * w)) dart.assertFailed(null, I[2], 56, 10, "bands[0].length == 2 * w");
+    let gb = new lib.GeometryBuilder.new();
+    for (let lst of bands) {
+      for (let i = 0; i < dart.notNull(lst[$length]); i = i + 2) {
+        gb.AddVertexTakeOwnership(lst[$_get](i));
+      }
+    }
+    if (!(gb.vertices[$length] === w * h)) dart.assertFailed(null, I[2], 65, 10, "gb.vertices.length == w * h");
+    gb.GenerateRegularGridFaces(w, h, wrap, inside);
+    if (dart.test(computeUVs)) {
+      if (!!dart.test(wrap)) dart.assertFailed("uvs do not work well with wrapping", I[2], 70, 13, "!wrap");
+      gb.GenerateRegularGridUV(w, h);
+      if (!(gb.attributes[$_get]("aTexUV")[$length] == gb.vertices[$length])) dart.assertFailed(null, I[2], 72, 12, "gb.attributes[aTexUV].length == gb.vertices.length");
+    }
+    if (dart.test(computeNormals)) {
+      gb.EnableAttribute("aNormal");
+      for (let lst of bands) {
+        for (let i = 0; i < dart.notNull(lst[$length]); i = i + 2) {
+          gb.AddAttributeVector3("aNormal", lst[$_get](i + 1));
+        }
+      }
+      if (!(gb.attributes[$_get]("aNormal")[$length] == gb.vertices[$length])) dart.assertFailed(null, I[2], 82, 12, "gb.attributes[aNormal].length == gb.vertices.length");
+    }
+    return gb;
+  };
+  lib$.TorusKnotGeometryWireframeFriendly = function TorusKnotGeometryWireframeFriendly(opts) {
+    let t0;
+    let radius = opts && 'radius' in opts ? opts.radius : 20;
+    let tubeRadius = opts && 'tubeRadius' in opts ? opts.tubeRadius : 4;
+    let segmentsR = opts && 'segmentsR' in opts ? opts.segmentsR : 128;
+    let segmentsT = opts && 'segmentsT' in opts ? opts.segmentsT : 16;
+    let p = opts && 'p' in opts ? opts.p : 2;
+    let q = opts && 'q' in opts ? opts.q : 3;
+    let heightScale = opts && 'heightScale' in opts ? opts.heightScale : 1;
+    let computeUVs = opts && 'computeUVs' in opts ? opts.computeUVs : true;
+    let computeNormals = opts && 'computeNormals' in opts ? opts.computeNormals : true;
+    let inside = opts && 'inside' in opts ? opts.inside : false;
+    function curveFunc(u, out) {
+      lib$.TorusKnotGetPos(u, q, p, radius, heightScale, out);
+    }
+    dart.fn(curveFunc, T.doubleLAndVector3LTovoid());
+    let pointsAndTangents = lib$.ParametricCurvePointsAndTangents(curveFunc, 0.0, 2.0 * 3.141592653589793, segmentsR, {halfOpen: true});
+    pointsAndTangents[$add](pointsAndTangents[$_get](0));
+    pointsAndTangents[$add](pointsAndTangents[$_get](1));
+    let h = dart.notNull(segmentsR) + 1;
+    if (!(pointsAndTangents[$length] === 2 * h)) dart.assertFailed(null, I[2], 108, 10, "pointsAndTangents.length == 2 * h");
+    let bands = lib$.TubeHullBands(pointsAndTangents, segmentsT, tubeRadius);
+    for (let b of bands) {
+      b[$add](b[$_get](0));
+      b[$add](b[$_get](1));
+    }
+    if (!(bands[$length] === h)) dart.assertFailed(null, I[2], 115, 10, "bands.length == h");
+    let gb = new lib.GeometryBuilder.new();
+    for (let i = 0; i < dart.notNull(segmentsR); i = i + 1) {
+      for (let j = 0; j < dart.notNull(segmentsT); j = j + 1) {
+        let ip = i + 1;
+        let jp = j + 1;
+        gb.AddFaces4(1, inside);
+        gb.AddVerticesTakeOwnership(T.JSArrayOfVector3L().of([bands[$_get](i)[$_get](jp * 2), bands[$_get](ip)[$_get](jp * 2), bands[$_get](ip)[$_get](j * 2), bands[$_get](i)[$_get](j * 2)]));
+      }
+    }
+    if (dart.test(computeUVs)) {
+      t0 = gb;
+      (() => {
+        t0.EnableAttribute("aTexUV");
+        return t0;
+      })();
+      for (let i = dart.notNull(segmentsR) - 1; i >= 0; i = i - 1) {
+        for (let j = 0; j < dart.notNull(segmentsT); j = j + 1) {
+          let ip = i + 1;
+          let jp = j + 1;
+          gb.AddAttributesVector2TakeOwnership("aTexUV", T.JSArrayOfVector2L().of([vector_math.Vector2.new(i / dart.notNull(segmentsR), jp / dart.notNull(segmentsT)), vector_math.Vector2.new(ip / dart.notNull(segmentsR), jp / dart.notNull(segmentsT)), vector_math.Vector2.new(ip / dart.notNull(segmentsR), j / dart.notNull(segmentsT)), vector_math.Vector2.new(i / dart.notNull(segmentsR), j / dart.notNull(segmentsT))]));
+        }
+      }
+    }
+    if (dart.test(computeNormals)) gb.GenerateNormalsAssumingTriangleMode();
+    return gb;
+  };
+  lib$.buildPlaneVectors = function buildPlaneVectors(planeNormal, u, v) {
+    let t0, t0$, t0$0, t0$1;
+    if (planeNormal.x[$abs]() > 0) {
+      let a = dart.notNull(planeNormal.x) * dart.notNull(planeNormal.x) + dart.notNull(planeNormal.y) * dart.notNull(planeNormal.y);
+      let k = 1.0 / math.sqrt(a);
+      t0 = u;
+      (() => {
+        t0.x = -dart.notNull(planeNormal.y) * k;
+        t0.y = dart.notNull(planeNormal.x) * k;
+        t0.z = 0.0;
+        return t0;
+      })();
+      t0$ = v;
+      (() => {
+        t0$.x = -dart.notNull(planeNormal.z) * dart.notNull(planeNormal.x) * k;
+        t0$.y = -dart.notNull(planeNormal.z) * dart.notNull(planeNormal.y) * k;
+        t0$.z = a * k;
+        return t0$;
+      })();
+    } else {
+      let a = dart.notNull(planeNormal.y) * dart.notNull(planeNormal.y) + dart.notNull(planeNormal.z) * dart.notNull(planeNormal.z);
+      let k = 1.0 / math.sqrt(a);
+      t0$0 = u;
+      (() => {
+        t0$0.x = 0.0;
+        t0$0.y = -dart.notNull(planeNormal.z) * k;
+        t0$0.z = dart.notNull(planeNormal.y) * k;
+        return t0$0;
+      })();
+      t0$1 = v;
+      (() => {
+        t0$1.x = a * k;
+        t0$1.y = -dart.notNull(planeNormal.x) * (dart.notNull(planeNormal.y) * k);
+        t0$1.z = dart.notNull(planeNormal.x) * (-dart.notNull(planeNormal.z) * k);
+        return t0$1;
+      })();
+    }
+  };
+  lib$.TubeHullBands = function TubeHullBands(pointsAndTangents, segments, radius) {
+    let out = T.JSArrayOfListLOfVector3L().of([]);
+    let v1 = new vector_math.Vector3.zero();
+    let v2 = new vector_math.Vector3.zero();
+    let sinList = _native_typed_data.NativeFloat32List.new(segments);
+    let cosList = _native_typed_data.NativeFloat32List.new(segments);
+    for (let j = 0; j < dart.notNull(segments); j = j + 1) {
+      let v = j / dart.notNull(segments) * 2 * 3.141592653589793;
+      cosList[$_set](j, dart.notNull(radius) * math.cos(v));
+      sinList[$_set](j, dart.notNull(radius) * math.sin(v));
+    }
+    for (let i = 0; i < dart.notNull(pointsAndTangents[$length]); i = i + 2) {
+      let c = pointsAndTangents[$_get](i + 0);
+      let d = pointsAndTangents[$_get](i + 1);
+      let band = T.JSArrayOfVector3L().of([]);
+      out[$add](band);
+      lib$.buildPlaneVectors(d, v1, v2);
+      v1.normalize();
+      v2.normalize();
+      for (let j = 0; j < dart.notNull(segments); j = j + 1) {
+        let p2 = new vector_math.Vector3.zero();
+        p2.addScaled(v1, cosList[$_get](j));
+        p2.addScaled(v2, sinList[$_get](j));
+        let p1 = c['+'](p2);
+        band[$add](p1);
+        p2.normalize();
+        band[$add](p2);
+      }
+    }
+    return out;
+  };
+  lib$.ParametricCurvePointsAndTangents = function ParametricCurvePointsAndTangents(func, start, end, numPoints, opts) {
+    let epsilon = opts && 'epsilon' in opts ? opts.epsilon : 0.001;
+    let halfOpen = opts && 'halfOpen' in opts ? opts.halfOpen : false;
+    if (!(dart.notNull(numPoints) >= 2)) dart.assertFailed(null, I[3], 95, 10, "numPoints >= 2");
+    let out = T.JSArrayOfVector3L().of([]);
+    let p = new vector_math.Vector3.zero();
+    let d = new vector_math.Vector3.zero();
+    let denom = dart.notNull(numPoints) - (dart.test(halfOpen) ? 0.0 : 1.0);
+    for (let i = 0; i < dart.notNull(numPoints); i = i + 1) {
+      let u = (dart.notNull(end) - dart.notNull(start)) / denom * i + dart.notNull(start);
+      func(u, p);
+      func(u + dart.notNull(epsilon), d);
+      d.sub(p);
+      out[$add](p.clone());
+      out[$add](d.clone());
+    }
+    return out;
+  };
+  dart.defineLazy(lib$, {
+    /*lib$._CubeNormals*/get _CubeNormals() {
+      return T.JSArrayOfVector3L().of([vector_math.Vector3.new(0.0, 0.0, 1.0), vector_math.Vector3.new(0.0, 0.0, -1.0), vector_math.Vector3.new(0.0, 1.0, 0.0), vector_math.Vector3.new(0.0, -1.0, 0.0), vector_math.Vector3.new(1.0, 0.0, 0.0), vector_math.Vector3.new(-1.0, 0.0, 0.0)]);
+    },
+    /*lib$.IcosahedronFaceList*/get IcosahedronFaceList() {
+      return T.JSArrayOfFace3L().of([new lib.Face3.new(0, 11, 5), new lib.Face3.new(0, 5, 1), new lib.Face3.new(0, 1, 7), new lib.Face3.new(0, 7, 10), new lib.Face3.new(0, 10, 11), new lib.Face3.new(1, 5, 9), new lib.Face3.new(5, 11, 4), new lib.Face3.new(11, 10, 2), new lib.Face3.new(10, 7, 6), new lib.Face3.new(7, 1, 8), new lib.Face3.new(3, 9, 4), new lib.Face3.new(3, 4, 2), new lib.Face3.new(3, 2, 6), new lib.Face3.new(3, 6, 8), new lib.Face3.new(3, 8, 9), new lib.Face3.new(4, 9, 5), new lib.Face3.new(2, 4, 11), new lib.Face3.new(6, 2, 10), new lib.Face3.new(8, 6, 7), new lib.Face3.new(9, 8, 1)]);
+    },
+    /*lib$.t*/get t() {
+      return (1 + math.sqrt(5)) / 2;
+    },
+    /*lib$.IcosahedronVertexList*/get IcosahedronVertexList() {
+      let t0, t0$, t0$0, t0$1, t0$2, t0$3, t0$4, t0$5, t0$6, t0$7, t0$8, t0$9;
+      return T.JSArrayOfVector3L().of([(t0 = vector_math.Vector3.new(-1.0, lib$.t, 0.0), (() => {
+          t0.normalize();
+          return t0;
+        })()), (t0$ = vector_math.Vector3.new(1.0, lib$.t, 0.0), (() => {
+          t0$.normalize();
+          return t0$;
+        })()), (t0$0 = vector_math.Vector3.new(-1.0, -dart.notNull(lib$.t), 0.0), (() => {
+          t0$0.normalize();
+          return t0$0;
+        })()), (t0$1 = vector_math.Vector3.new(1.0, -dart.notNull(lib$.t), 0.0), (() => {
+          t0$1.normalize();
+          return t0$1;
+        })()), (t0$2 = vector_math.Vector3.new(0.0, -1.0, lib$.t), (() => {
+          t0$2.normalize();
+          return t0$2;
+        })()), (t0$3 = vector_math.Vector3.new(0.0, 1.0, lib$.t), (() => {
+          t0$3.normalize();
+          return t0$3;
+        })()), (t0$4 = vector_math.Vector3.new(0.0, -1.0, -dart.notNull(lib$.t)), (() => {
+          t0$4.normalize();
+          return t0$4;
+        })()), (t0$5 = vector_math.Vector3.new(0.0, 1.0, -dart.notNull(lib$.t)), (() => {
+          t0$5.normalize();
+          return t0$5;
+        })()), (t0$6 = vector_math.Vector3.new(lib$.t, 0.0, -1.0), (() => {
+          t0$6.normalize();
+          return t0$6;
+        })()), (t0$7 = vector_math.Vector3.new(lib$.t, 0.0, 1.0), (() => {
+          t0$7.normalize();
+          return t0$7;
+        })()), (t0$8 = vector_math.Vector3.new(-dart.notNull(lib$.t), 0.0, -1.0), (() => {
+          t0$8.normalize();
+          return t0$8;
+        })()), (t0$9 = vector_math.Vector3.new(-dart.notNull(lib$.t), 0.0, 1.0), (() => {
+          t0$9.normalize();
+          return t0$9;
+        })())]);
+    }
+  }, true);
+  dart.trackLibraries("packages/flutter_wgl/src/shape/lib.dart", {
+    "package:flutter_wgl/src/shape/lib.dart": lib$
+  }, {
+    "package:flutter_wgl/src/shape/lib.dart": ["plane.dart", "cylinder.dart", "cube.dart", "torusknot.dart", "icosahedron.dart", "tube.dart"]
+  }, '{"version":3,"sourceRoot":"","sources":["cube.dart","cylinder.dart","icosahedron.dart","plane.dart","torusknot.dart","tube.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../Z:/packages/flutter_wgl/src/shape/lib.dart.lib.js"}');
+  // Exports:
+  return {
+    src__shape__lib: lib$
+  };
+}));
+
+//# sourceMappingURL=lib.dart.lib.js.map
