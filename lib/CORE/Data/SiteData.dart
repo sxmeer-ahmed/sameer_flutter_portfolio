@@ -106,15 +106,15 @@ class PersonalData {
     return PageNotFound();
   }
 
-  static const twitterURL = "https://twitter.com/iamSahdeep";
-  static const facebookURL = "https://fb.com/iamSahdeep";
-  static const githubURL = "https://github.com/iamSahdeep";
-  static const linkedinURL = "https://linkedin.com/in/iamSahdeep";
-  static const codepenURL = "https://codepen.io/iamSahdeep";
-  static const email = "sahdeepsingh98@gmail.com";
+  static const twitterURL = "https://twitter.com/dukhi_insaan";
+  static const facebookURL = "https://fb.com/coca.cola.coder";
+  static const githubURL = "https://github.com/sxmeer-ahmed";
+  static const linkedinURL = "https://linkedin.com/in/sameer-ahmed-2001";
+  static const codepenURL = "https://codepen.io/sxmeer-ahmed";
+  static const email = "ahmedkhansameer50@gmail.com";
   static const flutterURL = "https://flutter.dev";
-  static const devtoURL = "https://dev.to/iamSahdeep";
-  static const instaURL = "https://instagram.com/iamSahdeep";
+  static const devtoURL = "https://dev.to/cardio_coder_";
+  static const instaURL = "https://instagram.com/sameer.apk";
   static const resumeURL =
-      "https://docs.google.com/document/d/1AukhsobWRKjO2fIp71LV0jT5BgOZhhW0b_x7K70EBUU/edit#";
+      "https://drive.google.com/file/d/1YGT0DPTiyqIeBeTAoLcHc76ofnD99fiO/view?usp=sharing";
 }

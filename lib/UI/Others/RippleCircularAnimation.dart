@@ -43,7 +43,7 @@ class _RippleAnimationState extends State<RippleAnimation>
       height: radius,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.white.withOpacity(1 - _controller.value),
+        color: Colors.black.withOpacity(1 - _controller.value),
       ),
     );
   }

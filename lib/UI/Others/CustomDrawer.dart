@@ -8,9 +8,11 @@ import 'package:sameer_flutter_portfolio/CORE/Utils.dart';
 import 'package:sameer_flutter_portfolio/UI/Others/DefaultCursor.dart';
 import 'package:sameer_flutter_portfolio/UI/Others/HoverableButton.dart';
 import 'package:sameer_flutter_portfolio/UI/Screens/AboutPage.dart';
-import 'package:sameer_flutter_portfolio/UI/Screens/BlogsPage.dart';
+import 'package:sameer_flutter_portfolio/UI/Screens/CreativePage.dart';
 import 'package:sameer_flutter_portfolio/UI/Screens/ContactPage.dart';
+import 'package:sameer_flutter_portfolio/UI/Screens/HomePage.dart';
 import 'package:sameer_flutter_portfolio/UI/Screens/ProjectsPage.dart';
+import 'package:flutter_page_transition/flutter_page_transition.dart';
 
 class CustomDrawer extends StatefulWidget {
   @override
@@ -59,8 +61,16 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   height: 70,
                   width: 70,
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.of(context).pushReplacement(
+                      PageTransition(
+                          duration: const Duration(milliseconds: 700),
+                          type: PageTransitionType.rippleRightDown,
+                          child: HomePage()),
+                    );
                   },
+                  /*() {
+                    Navigator.pop(context);
+                  },*/
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Icon(
@@ -92,7 +102,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                         duration: Duration(milliseconds: 200),
                         child: Text("About".toUpperCase()),
                         style: TextStyle(
-                            fontFamily: "sharpgro",
+                            fontFamily: "wide",
                             color: uiModel.currentHoverItem == 1
                                 ? Colors.white
                                 : Colors.black,
@@ -120,7 +130,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                         duration: Duration(milliseconds: 200),
                         child: Text("Projects".toUpperCase()),
                         style: TextStyle(
-                            fontFamily: "sharpgro",
+                            fontFamily: "wide",
                             color: uiModel.currentHoverItem == 2
                                 ? Colors.white
                                 : Colors.black,
@@ -142,13 +152,13 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     cursor: SystemMouseCursors.none,
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, BlogsPage.Route);
+                        Navigator.pushNamed(context, CreativePage.Route);
                       },
                       child: AnimatedDefaultTextStyle(
                         duration: Duration(milliseconds: 200),
-                        child: Text("Blogs".toUpperCase()),
+                        child: Text("Creative".toUpperCase()),
                         style: TextStyle(
-                            fontFamily: "sharpgro",
+                            fontFamily: "wide",
                             color: uiModel.currentHoverItem == 3
                                 ? Colors.white
                                 : Colors.black,
@@ -176,7 +186,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                         duration: Duration(milliseconds: 200),
                         child: Text("Contact".toUpperCase()),
                         style: TextStyle(
-                            fontFamily: "sharpgro",
+                            fontFamily: "wide",
                             color: uiModel.currentHoverItem == 4
                                 ? Colors.white
                                 : Colors.black,

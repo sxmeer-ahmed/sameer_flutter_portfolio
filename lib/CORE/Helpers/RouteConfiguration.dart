@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:sameer_flutter_portfolio/CORE/Data/SiteData.dart';
 import 'package:sameer_flutter_portfolio/CORE/DataModels/Path.dart';
 import 'package:sameer_flutter_portfolio/UI/Screens/AboutPage.dart';
-import 'package:sameer_flutter_portfolio/UI/Screens/BlogsPage.dart';
+import 'package:sameer_flutter_portfolio/UI/Screens/CreativePage.dart';
 import 'package:sameer_flutter_portfolio/UI/Screens/ContactPage.dart';
 import 'package:sameer_flutter_portfolio/UI/Screens/HomePage.dart';
 import 'package:sameer_flutter_portfolio/UI/Screens/PageNotFound.dart';
 import 'package:sameer_flutter_portfolio/UI/Screens/ProjectDetailsPage.dart';
 import 'package:sameer_flutter_portfolio/UI/Screens/ProjectsPage.dart';
+import 'package:sameer_flutter_portfolio/UI/Screens/IntroPage.dart';
 
 class RouteConfiguration {
   /// List of [Path] to for route matching. When a named route is pushed with
@@ -29,8 +30,8 @@ class RouteConfiguration {
       (context, match) => AboutPage(),
     ),
     Path(
-      r'^' + BlogsPage.Route,
-      (context, match) => BlogsPage(),
+      r'^' + CreativePage.Route,
+      (context, match) => CreativePage(),
     ),
     Path(
       r'^' + ContactPage.Route,
@@ -39,6 +40,10 @@ class RouteConfiguration {
     Path(
       r'^' + PageNotFound.Route,
       (context, match) => PageNotFound(),
+    ),
+    Path(
+      r'^' + SplashScreen.Route,
+      (context, match) => SplashScreen(),
     ),
   ];
 
@@ -49,7 +54,7 @@ class RouteConfiguration {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     if (settings.name == "/") {
       return CustomPageRoute(
-        builder: (context) => HomePage(),
+        builder: (context) => SplashScreen(),
         settings: settings,
       );
     }

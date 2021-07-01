@@ -28,6 +28,20 @@ dependencies:
   flutter_circular_text: ^0.3.1
   url_launcher: ^6.0.3
   url_strategy: ^0.2.0
+  flutter_page_transition: ^0.1.6
+  easy_web_view: ^1.5.0
+  video_player: ^2.1.6
+  animated_text_kit: ^4.2.1
+  liquid_swipe: ^2.0.2
+  flutter_glow: ^0.2.0
+  flutter_animated_button: ^2.0.0
+  google_fonts: ^2.1.0
+  flip_card: ^0.5.0
+  glass_kit: ^2.0.1
+  carousel_slider: ^4.0.0
+
+  wheel_chooser: ^0.1.1
+
 
   flutter_wgl:
       git:
@@ -52,6 +66,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -68,6 +83,27 @@ flutter:
     - family: sharpgro
       fonts:
         - asset: assets/fonts/SharpGrotesk.ttf
+    - family: nova
+      fonts:
+        - asset: assets/fonts/Nova.ttf
+    - family: arabic
+      fonts:
+        - asset: assets/fonts/Arabic.ttf
+    - family: font
+      fonts:
+        - asset: assets/fonts/font2.ttf
+    - family: long
+      fonts:
+        - asset: assets/fonts/longnor.ttf
+    - family: cartoon
+      fonts:
+        - asset: assets/fonts/cartoon.ttf
+    - family: wide
+      fonts:
+        - asset: assets/fonts/wide.ttf
+    - family: intro
+      fonts:
+        - asset: assets/fonts/intro.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

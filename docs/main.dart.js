@@ -55671,7 +55671,7 @@ p=T.d4(new T.a4(C.wm,L.aF("Don't be a Stranger, just say hello :)",A.as(l,l,l,l,
 o=T.d4(new T.a4(C.pA,L.aF("Please fill the small contact form below",A.as(l,l,l,l,l,l,l,l,l,l,l,20,l,C.w,l,l,!0,l,l,l,l,l,l),C.I),l),l,l)
 s=N.at(b)?b.N(s).f.a.a:b.N(s).f.a.a/1.5
 n=t.Y
-return M.oG(new P.y(m),T.dT(C.ao,H.b([new T.bL(C.hv,l,l,new T.a4(new V.a9(j,j,j,j),i,l),l),new T.bL(C.oE,l,l,new T.a4(new V.a9(0,r.a.b/5,0,0),E.m7(T.eG(H.b([q,p,o,T.d4(new T.a4(C.cK,new V.z7(new P.y(m),20,T.iM(this.d,500,s),l),l),l,l),T.d4(new T.a4(C.wn,L.aF("You can also email me",A.as(l,l,l,l,l,l,l,l,l,l,l,25,l,C.w,l,l,!0,l,l,l,l,l,l),l),l),l,l),T.d4(new T.a4(C.wk,D.hm(l,L.aF("sahdeepsingh98@gmail.com",A.as(l,l,l,l,l,l,l,l,l,l,l,16,l,C.w,l,l,!0,l,l,l,l,l,l),l),C.a7,!1,l,l,l,l,l,l,l,l,l,l,new A.a0b(),l,l,l,l,l),l),l,l),T.d4(new T.a4(C.wj,E.m7(T.eU(H.b([new T.a4(C.b3,new F.cz(L.dz(C.m1,C.i,30),new A.a0c(),40,40,l),l),new T.a4(C.b3,new F.cz(L.dz(C.wR,C.i,30),new A.a0d(),40,40,l),l),new T.a4(C.b3,new F.cz(L.dz(C.pK,C.i,30),new A.a0e(),40,40,l),l),new T.a4(C.b3,new F.cz(L.dz(C.wP,C.i,30),new A.a0f(),40,40,l),l)],n),C.L,C.Q,C.bZ),l,l,new L.tJ(l),C.m),l),l,l)],n),C.L,C.Q,C.X),l,l,new L.jv(l),C.m),l),l)],n),C.aa),l,this.e)}}
+return M.oG(new P.y(m),T.dT(C.ao,H.b([new T.bL(C.hv,l,l,new T.a4(new V.a9(j,j,j,j),i,l),l),new T.bL(C.oE,l,l,new T.a4(new V.a9(0,r.a.b/5,0,0),E.m7(T.eG(H.b([q,p,o,T.d4(new T.a4(C.cK,new V.z7(new P.y(m),20,T.iM(this.d,500,s),l),l),l,l),T.d4(new T.a4(C.wn,L.aF("You can also email me",A.as(l,l,l,l,l,l,l,l,l,l,l,25,l,C.w,l,l,!0,l,l,l,l,l,l),l),l),l,l),T.d4(new T.a4(C.wk,D.hm(l,L.aF("ahmedkhansameer50@gmail.com",A.as(l,l,l,l,l,l,l,l,l,l,l,16,l,C.w,l,l,!0,l,l,l,l,l,l),l),C.a7,!1,l,l,l,l,l,l,l,l,l,l,new A.a0b(),l,l,l,l,l),l),l,l),T.d4(new T.a4(C.wj,E.m7(T.eU(H.b([new T.a4(C.b3,new F.cz(L.dz(C.m1,C.i,30),new A.a0c(),40,40,l),l),new T.a4(C.b3,new F.cz(L.dz(C.wR,C.i,30),new A.a0d(),40,40,l),l),new T.a4(C.b3,new F.cz(L.dz(C.pK,C.i,30),new A.a0e(),40,40,l),l),new T.a4(C.b3,new F.cz(L.dz(C.wP,C.i,30),new A.a0f(),40,40,l),l)],n),C.L,C.Q,C.bZ),l,l,new L.tJ(l),C.m),l),l,l)],n),C.L,C.Q,C.X),l,l,new L.jv(l),C.m),l),l)],n),C.aa),l,this.e)}}
 A.a0g.prototype={
 $1:function(a){return this.a},
 $S:361}
@@ -55684,7 +55684,7 @@ s.a=a
 s.al()},
 $S:29}
 A.a0b.prototype={
-$0:function(){N.a7U("sahdeepsingh98@gmail.com")},
+$0:function(){N.a7U("ahmedkhansameer50@gmail.com")},
 $S:1}
 A.a0c.prototype={
 $0:function(){N.cD("https://twitter.com/iamSahdeep")},

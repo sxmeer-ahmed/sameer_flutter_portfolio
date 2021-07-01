@@ -11,6 +11,7 @@ import 'package:sameer_flutter_portfolio/CORE/Utils.dart';
 import 'package:sameer_flutter_portfolio/UI/Others/HoverableButton.dart';
 
 class ContactPage extends StatefulWidget {
+  static const String TAG = "ContactPage";
   static const String Route = "/contact";
 
   @override
@@ -147,7 +148,7 @@ class _ContactPageState extends State<ContactPage> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 48.0),
                         child: GestureDetector(
-                            child: Text("sahdeepsingh98@gmail.com",
+                            child: Text("ahmedkhansameer50@gmail.com",
                                 style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.normal)),

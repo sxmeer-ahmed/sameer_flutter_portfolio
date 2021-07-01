@@ -38,8 +38,8 @@ class _HomeScreenCursorState extends State<HomeScreenCursor>
     return RotationTransition(
         turns: Tween(begin: 0.0, end: 1.0).animate(rotationController),
         child: SizedBox(
-          width: 400,
-          height: 400,
+          width: 200,
+          height: 200,
           child: Stack(
             children: [
               CircularText(
@@ -48,7 +48,7 @@ class _HomeScreenCursorState extends State<HomeScreenCursor>
                     text: Text(
                       "Sameer Ahmed".toUpperCase(),
                       style: TextStyle(
-                        fontSize: 28,
+                        fontSize: 14,
                         color: Colors.greenAccent,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'sharpgro',
@@ -61,7 +61,7 @@ class _HomeScreenCursorState extends State<HomeScreenCursor>
                     text: Text(
                       "Android &".toUpperCase(),
                       style: TextStyle(
-                        fontSize: 28,
+                        fontSize: 14,
                         color: Colors.blueAccent,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'sharpgro',
@@ -72,9 +72,9 @@ class _HomeScreenCursorState extends State<HomeScreenCursor>
                   ),
                   TextItem(
                     text: Text(
-                      "Flutter Engineer".toUpperCase(),
+                      "Flutter DEVELOPER".toUpperCase(),
                       style: TextStyle(
-                        fontSize: 28,
+                        fontSize: 14,
                         color: Colors.amberAccent,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'sharpgro',
@@ -85,9 +85,9 @@ class _HomeScreenCursorState extends State<HomeScreenCursor>
                   ),
                   TextItem(
                     text: Text(
-                      "from Delhi".toUpperCase(),
+                      "from DTU".toUpperCase(),
                       style: TextStyle(
-                        fontSize: 28,
+                        fontSize: 14,
                         color: Colors.redAccent,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'sharpgro',
@@ -97,7 +97,7 @@ class _HomeScreenCursorState extends State<HomeScreenCursor>
                     startAngle: -73,
                   ),
                 ],
-                radius: 200,
+                radius: 100,
                 position: CircularTextPosition.inside,
                 backgroundPaint: Paint()..color = Colors.transparent,
               ),
@@ -105,10 +105,10 @@ class _HomeScreenCursorState extends State<HomeScreenCursor>
                 alignment: Alignment.center,
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 400),
-                  height: 240,
-                  width: 240,
+                  height: 120,
+                  width: 120,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(120)),
+                      borderRadius: BorderRadius.all(Radius.circular(60)),
                       border: Border.all(
                           width: cursorProvider.isHoveringLinks ? 5 : 15,
                           color: Colors.white,
