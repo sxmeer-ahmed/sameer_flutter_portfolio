@@ -3,12 +3,15 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_page_transition/flutter_page_transition.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:sameer_flutter_portfolio/CORE/Data/SiteData.dart';
 import 'package:sameer_flutter_portfolio/CORE/ProviderModels/CursorProvider.dart';
 import 'package:sameer_flutter_portfolio/CORE/Utils.dart';
+import 'package:sameer_flutter_portfolio/UI/Others/CustomDrawer.dart';
 import 'package:sameer_flutter_portfolio/UI/Others/HoverableButton.dart';
+import 'package:video_player/video_player.dart';
 
 class ContactPage extends StatefulWidget {
   static const String TAG = "ContactPage";
@@ -19,28 +22,57 @@ class ContactPage extends StatefulWidget {
 }
 
 class _ContactPageState extends State<ContactPage> {
-  Widget _iframeWidget;
+  VideoPlayerController _controller;
+  VideoPlayerController _controller1;
+  VideoPlayerController _controller2;
+  VideoPlayerController _controller3;
   final globalKey = GlobalKey<ScaffoldState>();
-
   @override
   void initState() {
     super.initState();
 
-    final IFrameElement _iframeElement = IFrameElement();
-    _iframeElement.height = '500';
-    _iframeElement.width = '500';
-    _iframeElement.src = 'https://form.typeform.com/to/Lmd3Ng1B';
-    _iframeElement.style.border = 'none';
+    //html.window.location.reload();
 
-    ui.platformViewRegistry.registerViewFactory(
-      'iframeElement',
-      (int viewId) => _iframeElement,
-    );
+    //Video
+    _controller = VideoPlayerController.asset("assets/images/gmail.mp4")
+      ..initialize().then((_) {
+        // Once the video has been loaded we play the video and set looping to true.
+        _controller.play();
+        _controller.setLooping(true);
+        // Ensure the first frame is shown after the video is initialized.
+        setState(() {});
+      });
 
-    _iframeWidget = HtmlElementView(
-      key: UniqueKey(),
-      viewType: 'iframeElement',
-    );
+    _controller1 = VideoPlayerController.asset("assets/images/youtube.mp4")
+      ..initialize().then((_) {
+        // Once the video has been loaded we play the video and set looping to true.
+        _controller1.play();
+        _controller1.setLooping(true);
+        // Ensure the first frame is shown after the video is initialized.
+        setState(() {});
+      });
+
+    _controller2 = VideoPlayerController.asset("assets/images/fb.mp4")
+      ..initialize().then((_) {
+        // Once the video has been loaded we play the video and set looping to true.
+        _controller2.play();
+        _controller2.setLooping(true);
+        // Ensure the first frame is shown after the video is initialized.
+        setState(() {});
+      });
+
+    _controller3 = VideoPlayerController.asset("assets/images/instagram.mp4")
+      ..initialize().then((_) {
+        // Once the video has been loaded we play the video and set looping to true.
+        _controller3.play();
+        _controller3.setLooping(true);
+        // Ensure the first frame is shown after the video is initialized.
+        setState(() {});
+      });
+    /*final loader = document.getElementsByClassName('loader');
+    if (loader.isNotEmpty) {
+      loader.first.remove();
+    }*/
   }
 
   @override
@@ -48,40 +80,15 @@ class _ContactPageState extends State<ContactPage> {
     final uiModel = Provider.of<CursorProvider>(context);
 
     return Scaffold(
-      backgroundColor: Color(0xff262626),
+      backgroundColor: Color.fromARGB(255, 12, 12, 12),
       key: globalKey,
       body: Stack(
         children: [
           Align(
-            alignment: Alignment.topLeft,
-            child: Padding(
-              padding: EdgeInsets.all(Utils.isMobileView(context) ? 10 : 18.0),
-              child: InkWell(
-                hoverColor: Colors.transparent,
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
-                onHover: (val) {
-                  uiModel.setIsLogoHovering(val);
-                },
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: AnimatedContainer(
-                    height: uiModel.isLogoHovering ? 60 : 50,
-                    duration: const Duration(milliseconds: 200),
-                    child: Image.asset(
-                      "images/logo.png",
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Align(
             alignment: Alignment.topCenter,
             child: Padding(
               padding:
-                  EdgeInsets.only(top: MediaQuery.of(context).size.height / 5),
+                  EdgeInsets.only(top: MediaQuery.of(context).size.height / 20),
               child: SingleChildScrollView(
                 physics: BouncingScrollPhysics(),
                 child: Column(
@@ -90,76 +97,108 @@ class _ContactPageState extends State<ContactPage> {
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Text(
-                          "Contact Me",
+                          "CONTACT ME",
                           style: TextStyle(
-                              fontSize: 50, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ),
-                    Center(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                        child: Text(
-                          "Don't be a Stranger, just say hello :)",
-                          style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.normal),
-                        ),
-                      ),
-                    ),
-                    Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Text(
-                          "Please fill the small contact form below",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.normal),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                    Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Card(
-                          elevation: 20,
-                          color: Color(0xff262626),
-                          child: SizedBox(
-                            height: 500,
-                            width: Utils.isMobileView(context)
-                                ? Utils.getWidth(context)
-                                : Utils.getWidth(context) / 1.5,
-                            child: _iframeWidget,
-                          ),
+                              fontFamily: 'wide',
+                              fontSize: 120,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
                     Center(
                       child: Padding(
                         padding: const EdgeInsets.only(
-                            top: 100, left: 12, right: 12),
-                        child: Text(
-                          "You can also email me",
-                          style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.normal),
+                            left: 20.0, right: 20, bottom: 20, top: 100),
+                        child: Row(
+                          children: [
+                            FittedBox(
+                              // If your background video doesn't look right, try changing the BoxFit property.
+                              // BoxFit.fill created the look I was going for.
+                              fit: BoxFit.fill,
+                              child: SizedBox(
+                                height: MediaQuery.of(context).size.height / 4,
+                                width: MediaQuery.of(context).size.width / 11.7,
+                              ),
+                            ),
+                            GestureDetector(
+                                behavior: HitTestBehavior.opaque,
+                                onTap: () {
+                                  Utils.launchURL(PersonalData.email);
+                                },
+                                child: IgnorePointer(
+                                    child: FittedBox(
+                                  // If your background video doesn't look right, try changing the BoxFit property.
+                                  // BoxFit.fill created the look I was going for.
+                                  fit: BoxFit.fill,
+                                  child: SizedBox(
+                                    height:
+                                        MediaQuery.of(context).size.height / 4,
+                                    width:
+                                        MediaQuery.of(context).size.width / 5,
+                                    child: VideoPlayer(_controller),
+                                  ),
+                                ))),
+                            GestureDetector(
+                                behavior: HitTestBehavior.opaque,
+                                onTap: () {
+                                  Utils.launchURL(PersonalData.youtube);
+                                },
+                                child: IgnorePointer(
+                                    child: FittedBox(
+                                  // If your background video doesn't look right, try changing the BoxFit property.
+                                  // BoxFit.fill created the look I was going for.
+                                  fit: BoxFit.fill,
+                                  child: SizedBox(
+                                    height:
+                                        MediaQuery.of(context).size.height / 4,
+                                    width:
+                                        MediaQuery.of(context).size.width / 5,
+                                    child: VideoPlayer(_controller1),
+                                  ),
+                                ))),
+                            GestureDetector(
+                                behavior: HitTestBehavior.opaque,
+                                onTap: () {
+                                  Utils.launchURL(PersonalData.facebookURL);
+                                },
+                                child: IgnorePointer(
+                                    child: FittedBox(
+                                  // If your background video doesn't look right, try changing the BoxFit property.
+                                  // BoxFit.fill created the look I was going for.
+                                  fit: BoxFit.fill,
+                                  child: SizedBox(
+                                    height:
+                                        MediaQuery.of(context).size.height / 4,
+                                    width:
+                                        MediaQuery.of(context).size.width / 5,
+                                    child: VideoPlayer(_controller2),
+                                  ),
+                                ))),
+                            GestureDetector(
+                                behavior: HitTestBehavior.opaque,
+                                onTap: () {
+                                  Utils.launchURL(PersonalData.instaURL);
+                                },
+                                child: IgnorePointer(
+                                    child: FittedBox(
+                                  // If your background video doesn't look right, try changing the BoxFit property.
+                                  // BoxFit.fill created the look I was going for.
+                                  fit: BoxFit.fill,
+                                  child: SizedBox(
+                                    height:
+                                        MediaQuery.of(context).size.height / 4,
+                                    width:
+                                        MediaQuery.of(context).size.width / 5,
+                                    child: VideoPlayer(_controller3),
+                                  ),
+                                ))),
+                          ],
                         ),
                       ),
                     ),
                     Center(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 48.0),
-                        child: GestureDetector(
-                            child: Text("ahmedkhansameer50@gmail.com",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.normal)),
-                            onTap: () {
-                              Utils.launchEmail(PersonalData.email);
-                            }),
-                      ),
-                    ),
-                    Center(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 18.0),
+                        padding: const EdgeInsets.only(top: 120.0),
                         child: SingleChildScrollView(
                           physics: NeverScrollableScrollPhysics(),
                           child: Row(
@@ -185,12 +224,12 @@ class _ContactPageState extends State<ContactPage> {
                                     height: 40,
                                     width: 40,
                                     child: Icon(
-                                      FontAwesomeIcons.facebook,
+                                      FontAwesomeIcons.github,
                                       color: Colors.white,
                                       size: 30,
                                     ),
                                     onPressed: () {
-                                      Utils.launchURL(PersonalData.facebookURL);
+                                      Utils.launchURL(PersonalData.githubURL);
                                     }),
                               ),
                               Padding(
@@ -207,28 +246,34 @@ class _ContactPageState extends State<ContactPage> {
                                       Utils.launchURL(PersonalData.linkedinURL);
                                     }),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(18.0),
-                                child: HoverableButton(
-                                    height: 40,
-                                    width: 40,
-                                    child: Icon(
-                                      FontAwesomeIcons.instagram,
-                                      color: Colors.white,
-                                      size: 30,
-                                    ),
-                                    onPressed: () {
-                                      Utils.launchURL(PersonalData.instaURL);
-                                    }),
-                              ),
                             ],
                           ),
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.of(context).pop(
+                  PageTransition(
+                      duration: const Duration(milliseconds: 700),
+                      type: PageTransitionType.rippleLeftDown,
+                      child: CustomDrawer()),
+                );
+              },
+              child: Padding(
+                  padding: EdgeInsets.all(20),
+                  child: Icon(
+                    Icons.arrow_back,
+                    size: 50,
+                    color: Colors.white,
+                  )),
             ),
           ),
         ],

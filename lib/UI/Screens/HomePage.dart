@@ -1,5 +1,3 @@
-import 'dart:html' as html;
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/src/rendering/mouse_cursor.dart';
@@ -10,14 +8,12 @@ import 'package:sameer_flutter_portfolio/CORE/ProviderModels/CursorProvider.dart
 import 'package:sameer_flutter_portfolio/CORE/Utils.dart';
 import 'package:sameer_flutter_portfolio/UI/Others/CustomDrawer.dart';
 import 'package:sameer_flutter_portfolio/UI/Others/DefaultCursor.dart';
-import 'package:sameer_flutter_portfolio/UI/Others/HomeScreenCursor.dart';
+
 import 'package:sameer_flutter_portfolio/UI/Others/HoverableButton.dart';
 import 'package:sameer_flutter_portfolio/UI/Others/RippleCircularAnimation.dart';
 import 'package:flutter_page_transition/flutter_page_transition.dart';
-import 'package:sameer_flutter_portfolio/UI/Screens/IntroPage.dart';
 
 import 'package:video_player/video_player.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 
 class HomePage extends StatefulWidget {
   static const String TAG = "HomePage";
@@ -30,6 +26,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   VideoPlayerController _controller;
   final globalKey = GlobalKey<ScaffoldState>();
+
+  void _stateUpdate() {
+    setState(() {});
+    print("refresh done");
+  }
+
   @override
   void initState() {
     super.initState();
@@ -77,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   children: [
                     Container(
-                      width: MediaQuery.of(context).size.height / 1.50,
+                      width: MediaQuery.of(context).size.height / 1.70,
                     ),
                     FittedBox(
                       // If your background video doesn't look right, try changing the BoxFit property.
@@ -109,18 +111,6 @@ class _HomePageState extends State<HomePage> {
                     uiModel.pointerPosition.dy, context),
                 child: DefaultCursor(),
               ),
-              /*Positioned(
-                  left: screenWidth * 0,
-                  top: screenHeight * 0.1,
-                  child: Text(
-                    'HELLO',
-                    style: TextStyle(
-                        fontFamily: "wide",
-                        fontWeight: FontWeight.bold,
-                        fontSize:
-                            80 * (MediaQuery.of(context).size.width / 1250),
-                        color: Colors.black),
-                  )),*/
               Positioned(
                   top: screenHeight * 0.385,
                   child: Padding(
@@ -197,22 +187,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              Positioned(
-                top: screenHeight * 0.27,
-                right: screenWidth * 0.01,
-                child: Padding(
-                  padding: EdgeInsets.only(
-                      left: 16 * MediaQuery.of(context).size.width / 1250),
-                  child: Text(
-                    'S\n\nA\n\nM\n\nE\n\nE\n\nR',
-                    style: TextStyle(
-                        fontFamily: "wide",
-                        fontSize:
-                            20 * (MediaQuery.of(context).size.width / 1250),
-                        color: Colors.black),
-                  ),
-                ),
-              ),
 
               /*Image(
                       image: AssetImage(
@@ -264,7 +238,7 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                             color: Colors.black,
                             fontFamily: "wide",
-                            fontSize: 20,
+                            fontSize: 20 * screenWidth / 1250,
                           ),
                         ),
                       ),
@@ -281,7 +255,8 @@ class _HomePageState extends State<HomePage> {
                     width: 70,
                     height: 70,
                     onPressed: () {
-                      Navigator.of(context).push(
+                      //Navigator.pop(context);
+                      Navigator.of(context).pushReplacement(
                         PageTransition(
                             duration: const Duration(milliseconds: 700),
                             type: PageTransitionType.rippleRightDown,
@@ -358,11 +333,6 @@ class _HomePageState extends State<HomePage> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              "© Sameer Ahmed, ",
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 17),
-                            ),
-                            Text(
                               "Build with ❤ and ",
                               style:
                                   TextStyle(color: Colors.black, fontSize: 17),
@@ -389,9 +359,9 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  @override
+  /*@override
   void dispose() {
     super.dispose();
     _controller.dispose();
-  }
+  }*/
 }

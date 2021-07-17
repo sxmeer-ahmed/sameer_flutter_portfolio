@@ -61,12 +61,13 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   height: 70,
                   width: 70,
                   onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      PageTransition(
-                          duration: const Duration(milliseconds: 700),
-                          type: PageTransitionType.rippleRightDown,
-                          child: HomePage()),
-                    );
+                    //Navigator.pop(context);
+                    //Navigator.pop(context);
+
+                    Navigator.of(context).pushReplacement(PageTransition(
+                        duration: const Duration(milliseconds: 700),
+                        type: PageTransitionType.rippleRightDown,
+                        child: HomePage()));
                   },
                   /*() {
                     Navigator.pop(context);

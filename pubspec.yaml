@@ -39,8 +39,10 @@ dependencies:
   flip_card: ^0.5.0
   glass_kit: ^2.0.1
   carousel_slider: ^4.0.0
+  auto_size_text: ^2.1.0
 
-  wheel_chooser: ^0.1.1
+  animated_background: ^1.0.5
+  flip_panel: ^1.0.1
 
 
   flutter_wgl:
@@ -89,6 +91,9 @@ flutter:
     - family: arabic
       fonts:
         - asset: assets/fonts/Arabic.ttf
+    - family: hindi
+      fonts:
+        - asset: assets/fonts/Hindi.ttf
     - family: font
       fonts:
         - asset: assets/fonts/font2.ttf

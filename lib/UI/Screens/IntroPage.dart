@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:sameer_flutter_portfolio/CORE/Lamp/lamp_hanger_rope.dart';
-import 'package:sameer_flutter_portfolio/CORE/Lamp/lamp.dart';
+
 import 'package:sameer_flutter_portfolio/CORE/Lamp/LEDBulb.dart';
 import 'package:sameer_flutter_portfolio/CORE/Lamp/lamp_switch.dart';
 import 'package:sameer_flutter_portfolio/CORE/Lamp/lamp_switch_rope.dart';
-import 'package:sameer_flutter_portfolio/CORE/Lamp/name.dart';
+
 import 'package:sameer_flutter_portfolio/CORE/ProviderModels/CursorProvider.dart';
 import 'package:provider/provider.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 final darkGray = const Color(0xFF232323);
 final bulbOnColor = const Color(0xFFFFE12C);
@@ -39,11 +39,9 @@ class SplashScreenState extends State<SplashScreen> {
               uiModel.setPointerPosition(event.position);
             },
             child: Container(
-                decoration: _isSwitchOn
-                    ? BoxDecoration(
-                        color: Color.fromARGB(255, 24, 34, 59),
-                      )
-                    : BoxDecoration(color: Colors.black),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 24, 34, 59),
+                ),
                 //color: _isSwitchOn ? Colors.black : Colors.transparent,
                 child: Stack(
                   children: [
@@ -60,14 +58,6 @@ class SplashScreenState extends State<SplashScreen> {
                       offColor: bulbOffColor,
                       isSwitchOn: _isSwitchOn,
                     ),
-                    /*Lamp(
-                  screenWidth: screenWidth,
-                  screenHeight: screenHeight,
-                  color: darkGray,
-                  isSwitchOn: _isSwitchOn,
-                  gradientColor: bulbOnColor,
-                  animationDuration: animationDuration,
-                ),*/
                     LampSwitch(
                       screenWidth: screenWidth,
                       screenHeight: screenHeight,

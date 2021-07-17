@@ -2,6 +2,10 @@ flutter_wgl
 2.7
 file:///C:/src/flutter/flutter/.pub-cache/git/flutter_wgl-888ff9df99e7c8d564f2c79cad33a729828cdbbc/
 file:///C:/src/flutter/flutter/.pub-cache/git/flutter_wgl-888ff9df99e7c8d564f2c79cad33a729828cdbbc/lib/
+animated_background
+1.19
+file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/animated_background-1.0.5/
+file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/animated_background-1.0.5/lib/
 animated_text_kit
 2.12
 file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/
@@ -14,6 +18,10 @@ async
 2.12
 file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.5.0/
 file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.5.0/lib/
+auto_size_text
+2.0
+file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/auto_size_text-2.1.0/
+file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/auto_size_text-2.1.0/lib/
 boolean_selector
 2.12
 file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/
@@ -66,6 +74,10 @@ flip_card
 2.12
 file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flip_card-0.5.0/
 file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flip_card-0.5.0/lib/
+flip_panel
+1.20
+file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flip_panel-1.0.1/
+file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flip_panel-1.0.1/lib/
 flutter_animated_button
 2.12
 file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_animated_button-2.0.0/
@@ -266,10 +278,6 @@ webview_flutter
 2.12
 file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-2.0.8/
 file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-2.0.8/lib/
-wheel_chooser
-2.1
-file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/wheel_chooser-0.1.1/
-file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/wheel_chooser-0.1.1/lib/
 win32
 2.12
 file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/win32-2.0.5/

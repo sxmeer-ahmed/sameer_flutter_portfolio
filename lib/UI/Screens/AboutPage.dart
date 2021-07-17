@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_page_transition/flutter_page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:sameer_flutter_portfolio/CORE/Data/SiteData.dart';
 import 'package:sameer_flutter_portfolio/CORE/ProviderModels/CursorProvider.dart';
 import 'package:sameer_flutter_portfolio/CORE/Utils.dart';
+import 'package:sameer_flutter_portfolio/UI/Others/CustomDrawer.dart';
 import 'package:sameer_flutter_portfolio/UI/Others/DefaultCursor.dart';
 import 'package:flutter_glow/flutter_glow.dart';
 import 'package:video_player/video_player.dart';
@@ -67,11 +69,9 @@ class _AboutPageState extends State<AboutPage> {
                       child: Column(
                         children: [
                           Container(
-                              // color: Colors.black,
                               child: Column(children: [
                             AnimatedContainer(
                               duration: const Duration(milliseconds: 100),
-                              // color: Colors.red,
                               padding: EdgeInsets.symmetric(
                                   vertical: Utils.isMobileView(context)
                                       ? Utils.getHeight(context) / 2
@@ -184,11 +184,12 @@ class _AboutPageState extends State<AboutPage> {
                                                                     .underline))
                                                   ]),
                                             ]),
-                                      )
+                                      ),
                                     ],
                                   ),
                                 )),
                           ])),
+                          /*
                           Container(
                               height: 50,
                               width: Utils.getWidth(context),
@@ -220,7 +221,10 @@ class _AboutPageState extends State<AboutPage> {
                                     child: Text(
                                       "Education".toUpperCase(),
                                       style: TextStyle(
-                                          fontSize: 70, fontFamily: "wide"),
+                                          fontSize: 70 *
+                                              Utils.getWidth(context) /
+                                              1250,
+                                          fontFamily: "wide"),
                                     )),
                               )),
                           Container(
@@ -245,7 +249,10 @@ class _AboutPageState extends State<AboutPage> {
                                           "DELHI TECHNOLOGICAL \nUNIVERSITY (FORMERLY AS DCE)"
                                               .toUpperCase(),
                                           style: TextStyle(
-                                              fontSize: 40, fontFamily: "wide"),
+                                              fontSize: 40 *
+                                                  Utils.getWidth(context) /
+                                                  1250,
+                                              fontFamily: "wide"),
                                         ),
                                       ),
                                       Padding(
@@ -259,7 +266,9 @@ class _AboutPageState extends State<AboutPage> {
                                         child: Text(
                                           "  B.TECH IN COMPUTER SCIENCE \n  Aug 2019-2023 | New Delhi, India                                             ",
                                           style: TextStyle(
-                                              fontSize: 20,
+                                              fontSize: 20 *
+                                                  Utils.getWidth(context) /
+                                                  1250,
                                               fontFamily: "sharpgro"),
                                         ),
                                       ),
@@ -286,7 +295,10 @@ class _AboutPageState extends State<AboutPage> {
                                           "RPVV LINK ROAD                      "
                                               .toUpperCase(),
                                           style: TextStyle(
-                                              fontSize: 40, fontFamily: "wide"),
+                                              fontSize: 40 *
+                                                  Utils.getWidth(context) /
+                                                  1250,
+                                              fontFamily: "wide"),
                                         ),
                                       ),
                                       Padding(
@@ -300,7 +312,9 @@ class _AboutPageState extends State<AboutPage> {
                                         child: Text(
                                           "INTERMEDIATE/+2                                  \nMar 2017-2019 | New Delhi, India                                             ",
                                           style: TextStyle(
-                                              fontSize: 20,
+                                              fontSize: 20 *
+                                                  Utils.getWidth(context) /
+                                                  1250,
                                               fontFamily: "sharpgro"),
                                         ),
                                       ),
@@ -327,7 +341,10 @@ class _AboutPageState extends State<AboutPage> {
                                           "RAMJAS SR. SEC. SCH00L NO. 4"
                                               .toUpperCase(),
                                           style: TextStyle(
-                                              fontSize: 40, fontFamily: "wide"),
+                                              fontSize: 40 *
+                                                  Utils.getWidth(context) /
+                                                  1250,
+                                              fontFamily: "wide"),
                                         ),
                                       ),
                                       Padding(
@@ -341,7 +358,9 @@ class _AboutPageState extends State<AboutPage> {
                                         child: Text(
                                           "MATRICULATION                                              \nMar 2012-2017 | New Delhi, India                                             ",
                                           style: TextStyle(
-                                              fontSize: 20,
+                                              fontSize: 20 *
+                                                  Utils.getWidth(context) /
+                                                  1250,
                                               fontFamily: "sharpgro"),
                                         ),
                                       ),
@@ -385,7 +404,10 @@ class _AboutPageState extends State<AboutPage> {
                                     front: Text(
                                       "SKILLS".toUpperCase(),
                                       style: TextStyle(
-                                          fontSize: 50, fontFamily: "long"),
+                                          fontSize: 50 *
+                                              Utils.getWidth(context) /
+                                              1250,
+                                          fontFamily: "long"),
                                     ),
                                     back: Padding(
                                       padding: EdgeInsets.all(
@@ -524,7 +546,7 @@ class _AboutPageState extends State<AboutPage> {
                                 ),
                               ],
                             ),
-                          ),
+                          ),*/
                           Padding(
                             padding: EdgeInsets.all(
                                 !Utils.isMobileView(context) ? 100.0 : 10.0),
@@ -550,29 +572,22 @@ class _AboutPageState extends State<AboutPage> {
                     ),
                     Align(
                       alignment: Alignment.topLeft,
-                      child: Padding(
-                        padding: EdgeInsets.all(
-                            Utils.isMobileView(context) ? 10 : 18.0),
-                        child: InkWell(
-                          hoverColor: Colors.transparent,
-                          mouseCursor: SystemMouseCursors.none,
-                          onTap: () {
-                            Navigator.of(context).pop();
-                          },
-                          onHover: (val) {
-                            uiModel.setIsLogoHovering(val);
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: AnimatedContainer(
-                              height: uiModel.isLogoHovering ? 60 : 50,
-                              duration: const Duration(milliseconds: 200),
-                              child: Image.asset(
-                                "images/logo.png",
-                              ),
-                            ),
-                          ),
-                        ),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop(
+                            PageTransition(
+                                duration: const Duration(milliseconds: 700),
+                                type: PageTransitionType.rippleLeftDown,
+                                child: CustomDrawer()),
+                          );
+                        },
+                        child: Padding(
+                            padding: EdgeInsets.all(20),
+                            child: Icon(
+                              Icons.arrow_back,
+                              size: 50,
+                              color: Colors.white,
+                            )),
                       ),
                     ),
                   ],

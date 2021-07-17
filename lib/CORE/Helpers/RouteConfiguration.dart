@@ -6,6 +6,7 @@ import 'package:sameer_flutter_portfolio/UI/Screens/CreativePage.dart';
 import 'package:sameer_flutter_portfolio/UI/Screens/ContactPage.dart';
 import 'package:sameer_flutter_portfolio/UI/Screens/HomePage.dart';
 import 'package:sameer_flutter_portfolio/UI/Screens/PageNotFound.dart';
+import 'package:sameer_flutter_portfolio/UI/Screens/PresentationPage.dart';
 import 'package:sameer_flutter_portfolio/UI/Screens/ProjectDetailsPage.dart';
 import 'package:sameer_flutter_portfolio/UI/Screens/ProjectsPage.dart';
 import 'package:sameer_flutter_portfolio/UI/Screens/IntroPage.dart';
@@ -18,8 +19,12 @@ class RouteConfiguration {
   /// take priority.
   static List<Path> paths = [
     Path(
-      r'^' + ProjectDetailsPage.Route + r'/([\w-]+)$',
-      (context, match) => PersonalData.getProjectPage(match),
+      r'^' + ProjectDetailsPage.Route,
+      (context, match) => ProjectDetailsPage(),
+    ),
+    Path(
+      r'^' + PresentationPage.Route,
+      (context, match) => PresentationPage(),
     ),
     Path(
       r'^' + ProjectPage.Route,

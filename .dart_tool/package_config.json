@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "animated_background",
+      "rootUri": "file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/animated_background-1.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "1.19"
+    },
+    {
       "name": "animated_text_kit",
       "rootUri": "file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1",
       "packageUri": "lib/",
@@ -18,6 +24,12 @@
       "rootUri": "file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "auto_size_text",
+      "rootUri": "file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/auto_size_text-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
     },
     {
       "name": "boolean_selector",
@@ -96,6 +108,12 @@
       "rootUri": "file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flip_card-0.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "flip_panel",
+      "rootUri": "file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flip_panel-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "1.20"
     },
     {
       "name": "flutter",
@@ -428,12 +446,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "wheel_chooser",
-      "rootUri": "file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/wheel_chooser-0.1.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.1"
-    },
-    {
       "name": "win32",
       "rootUri": "file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/win32-2.0.5",
       "packageUri": "lib/",
@@ -452,7 +464,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-07-01T01:26:44.272900Z",
+  "generated": "2021-07-17T18:33:50.423532Z",
   "generator": "pub",
   "generatorVersion": "2.12.2"
 }

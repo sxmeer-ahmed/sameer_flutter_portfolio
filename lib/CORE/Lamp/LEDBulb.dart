@@ -7,6 +7,7 @@ import 'package:sameer_flutter_portfolio/UI/Screens/HomePage.dart';
 import 'package:sameer_flutter_portfolio/CORE/ProviderModels/CursorProvider.dart';
 import 'package:provider/provider.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class LEDBulb extends StatelessWidget {
   final double screenWidth, screenHeight;
@@ -37,19 +38,17 @@ class LEDBulb extends StatelessWidget {
               width: screenWidth * 0.405,
             ))
           : Container(),*/
-      isSwitchOn
-          ? Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                color: Color.fromARGB(255, 40, 61, 108),
-                height: screenHeight * 0.136,
-              ))
-          : Container(),
+      Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            color: Color.fromARGB(255, 40, 61, 108),
+            height: screenHeight * 0.136,
+          )),
       Positioned(
           left: screenWidth * 0.15,
           bottom: 0,
           child: Visibility(
-            visible: isSwitchOn,
+            visible: true,
             child: Image(
               image: AssetImage('assets/images/3.gif'),
               height: screenHeight * 0.71,
@@ -57,29 +56,51 @@ class LEDBulb extends StatelessWidget {
             ),
           )),
       isSwitchOn
-          ? Positioned(
-              left: screenWidth * 0.15,
-              top: -screenHeight * 0.1,
-              child: DefaultTextStyle(
-                style: const TextStyle(
-                  color: Colors.white,
-                  letterSpacing: 5,
-                  fontFamily: "wide",
-                  fontSize: 130,
-                ),
-                child: AnimatedTextKit(
-                  animatedTexts: [
-                    RotateAnimatedText(' WELCOME '),
-                    RotateAnimatedText('   TO MY  '),
-                    RotateAnimatedText('PORTFOLIO'),
-                  ],
-                  onTap: () {
-                    print("Tap Event");
-                  },
-                ),
-              ))
+          ? Align(
+              alignment: Alignment.topCenter,
+              child: Padding(
+                  padding: EdgeInsets.only(top: screenHeight / 15.5, left: 40),
+                  child: AutoSizeText(
+                    'WELCOME',
+                    style: TextStyle(
+                      color: Colors.white,
+                      letterSpacing: 5,
+                      fontFamily: "wide",
+                      fontSize: 80 * screenWidth / 1350,
+                    ),
+                  )))
           : Container(),
-      !isSwitchOn
+      isSwitchOn
+          ? Align(
+              alignment: Alignment.topCenter,
+              child: Padding(
+                  padding: EdgeInsets.only(top: screenHeight / 7.3, left: 40),
+                  child: AutoSizeText(
+                    '\nTO MY',
+                    style: TextStyle(
+                      color: Colors.white,
+                      letterSpacing: 5,
+                      fontFamily: "wide",
+                      fontSize: 40 * screenWidth / 1350,
+                    ),
+                  )))
+          : Container(),
+      isSwitchOn
+          ? Align(
+              alignment: Alignment.topCenter,
+              child: Padding(
+                  padding: EdgeInsets.only(top: screenHeight / 7.5, left: 40),
+                  child: AutoSizeText(
+                    '\nPORTFOLIO',
+                    style: TextStyle(
+                      color: Colors.white,
+                      letterSpacing: 5,
+                      fontFamily: "wide",
+                      fontSize: 90 * screenWidth / 1400,
+                    ),
+                  )))
+          : Container(),
+      /*!isSwitchOn
           ? Positioned(
               left: screenWidth * 0.01,
               top: screenHeight * 0.1,
@@ -93,7 +114,7 @@ class LEDBulb extends StatelessWidget {
                   fontSize: 130,
                 ),
               ))
-          : Container(),
+          : Container(),*/
 
       /*!isSwitchOn
           ? Positioned(
